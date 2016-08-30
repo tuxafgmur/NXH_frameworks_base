@@ -637,7 +637,7 @@ public class NotificationPanelView extends PanelView implements
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        if (mBlockTouches || mQsContainer.isCustomizing()) {
+        if (mBlockTouches || mNotificationContainerParent.isCustomizerShowingOrAnimating()) {
             return false;
         }
         initDownStates(event);
@@ -797,7 +797,7 @@ public class NotificationPanelView extends PanelView implements
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (mBlockTouches || mQsContainer.isCustomizing()) {
+        if (mBlockTouches || mNotificationContainerParent.isCustomizerShowingOrAnimating()) {
             return false;
         }
         if (mDoubleTapToSleepEnabled
