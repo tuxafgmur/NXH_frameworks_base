@@ -3866,6 +3866,263 @@ public final class Settings {
          * 1: Display on keyguard status bar
          * 2: Display on Normal status bar
          * 3: Enabled for both
+         * Enable statusbar double tap gesture on to put device to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
+
+        /**
+         * Enable double tap gesture anywhere on the lock screen put device to sleep
+         * @hide
+         */
+        public static final String DOUBLE_TAP_SLEEP_ANYWHERE = "double_tap_sleep_anywhere";
+
+        /**
+         * whether to enable torch on lockscreen
+         * @hide
+         */
+        public static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
+
+        /**
+         * Whether to show the IME switcher in the status bar
+         * @hide
+         */
+        public static final String STATUS_BAR_IME_SWITCHER = "status_bar_ime_switcher";
+
+        /**
+         * Whether to display sound panel in the power menu
+         *
+         * @hide
+         */
+        public static final String POWERMENU_SOUNDPANEL = "powermenu_soundpanel";
+
+        /**
+         * Whether to display screenshot in the power menu
+         *
+         * @hide
+         */
+        public static final String POWERMENU_SCREENSHOT = "powermenu_screenshot";
+
+        /**
+         * Whether to display settings in the power menu
+         *
+         * @hide
+         */
+        public static final String POWERMENU_SETTINGS = "powermenu_settings";
+
+        /**
+         * Whether to display lock in the power menu
+         *
+         * @hide
+         */
+        public static final String POWERMENU_LOCKDOWN = "powermenu_lockdown";
+
+        /**
+         * Whether to display airplane in the power menu
+         *
+         * @hide
+         */
+        public static final String POWERMENU_AIRPLANE = "powermenu_airplane";
+
+        /**
+         * Whether to display reboot in the power menu
+         *
+         * @hide
+         */
+        public static final String POWERMENU_REBOOT = "powermenu_reboot";
+
+        /**
+         * Whether to display power in the power menu
+         *
+         * @hide
+         */
+        public static final String POWERMENU_POWER = "powermenu_power";
+
+        /**
+         * Whether to display screen record in the power menu
+         *
+         * @hide
+         */
+        public static final String POWERMENU_SCREENRECORD = "powermenu_screenrecord";
+
+        /**
+         * Whether to display the torch option in the power menu
+         *
+         * @hide
+         */
+        public static final String POWERMENU_TORCH = "powermenu_torch";
+
+        /**
+         * Whether to use the custom status bar header or not
+         * @hide
+         */
+        public static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
+
+        /**
+         * Whether to apply a shadow on top of the header image
+         * value is the alpha value of the shadow image is 0 -> no shadow -> 255 black
+         * @hide
+         */
+        public static final String STATUS_BAR_CUSTOM_HEADER_SHADOW = "status_bar_custom_header_shadow";
+
+        /**
+         * header image package to use for daylight header - package name - null if default
+         * @hide
+         */
+        public static final String STATUS_BAR_DAYLIGHT_HEADER_PACK = "status_bar_daylight_header_pack";
+
+        /**
+         * Current active provider - available currently "static" "daylight"
+         * @hide
+         */
+        public static final String STATUS_BAR_CUSTOM_HEADER_PROVIDER = "status_bar_custom_header_provider";
+
+        /**
+         * Manual override picture to use
+         * @hide
+         */
+        public static final String STATUS_BAR_CUSTOM_HEADER_IMAGE = "status_bar_custom_header_image";
+
+        /**
+         * Whether the user has enabled headsup (Default 1)
+         * HeadsUp is enabled by default within its Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED
+         * setting. Avoid changing low level implementations and use a System setting to
+         * override per-user heads up on/off preference.
+         *
+         * Enable headsup = 1 (on by default)
+         * Disable headsup = 0
+         *
+         * @see com.android.systemui.statusbar.BaseStatusBar#addNotification
+         * @hide
+         */
+        public static final String HEADS_UP_USER_ENABLED = "heads_up_user_enabled";
+
+        /** @hide */ public static final int HEADS_UP_USER_OFF = 0;
+        /** @hide */ public static final int HEADS_UP_USER_ON = 1;
+
+        /**
+         * Enable flashlight notification
+         * @hide
+         */
+        public static final String FLASHLIGHT_NOTIFICATION = "flashlight_notification";
+
+        /**
+         * Whether to display music track title within the music qs tile
+         * @hide
+         */
+        public static final String MUSIC_TILE_TITLE = "music_tile_title";
+
+        /**
+         * Whether to display qs tile titles in the qs panel
+         * @hide
+         */
+        public static final String QS_TILE_TITLE_VISIBILITY = "qs_tile_title_visibility";
+
+        /**
+         * Disable dashboard conditions in settings
+         * @hide
+         */
+        public static final String DISABLE_DASHBOARD_CONDITIONS = "disable_dashboard_conditions";
+
+        /**
+         * Disable dashboard suggestions in settings
+         * @hide
+         */
+        public static final String DISABLE_SUGGESTIONS = "disable_suggestions";
+
+        /**
+         * Dashboard portrait columns in settings
+         * @hide
+         */
+        public static final String DASHBOARD_PORTRAIT_COLUMNS = "dashboard_portrait_columns";
+
+        /**
+         * Dashboard landscape columns in settings
+         * @hide
+         */
+        public static final String DASHBOARD_LANDSCAPE_COLUMNS = "dashboard_landscape_columns";
+
+        /**
+         * Remove tile summaries in settings
+         * @hide
+         */
+        public static final String REMOVE_TILE_SUMMARY = "remove_tile_summary";
+
+        /**
+         * Dim amount control for power and reboot dialogs
+         * @hide
+         */
+        public static final String POWER_REBOOT_DIALOG_DIM = "power_reboot_dialog_dim";
+
+        /**
+         * Whether to display data activity arrows for wifi/data connections
+         * @hide
+         */
+        public static final String DATA_ACTIVITY_ARROWS = "data_activity_arrows";
+
+        /**
+         * Whether to show the negociated charger current in the lockscreen
+         * @hide
+         */
+        public static final String LOCKSCREEN_CHARGING_CURRENT = "lockscreen_charging_current";
+
+        /**
+         * Volume rocker wake
+         * @hide
+         */
+        public static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
+
+        /**
+         * Volume key controls ringtone or media sound stream
+         * @hide
+         */
+        public static final String VOLUME_KEYS_CONTROL_MEDIA_STREAM =
+                "volume_keys_control_media_stream";
+
+        /**
+         * Whether or not volume button music controls should be enabled to seek media tracks
+         * @hide
+         */
+        public static final String VOLUME_ROCKER_MUSIC_CONTROLS = "volume_rocker_music_controls";
+
+        /**
+         * Swap volume buttons when the screen is rotated
+         * 0 - Disabled
+         * 1 - Enabled (screen is rotated by 90 or 180 degrees: phone, hybrid)
+         * 2 - Enabled (screen is rotated by 180 or 270 degrees: tablet)
+         * @hide
+         */
+        public static final String SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
+
+        /**
+         * Toast icon
+         * @hide
+         */
+        public static final String TOAST_ICON = "toast_icon";
+
+        /**
+         * Show the four 4g network icon instead of lte
+         * @hide
+         */
+        public static final String SHOW_LTE_FOURGEE = "show_lte_fourgee";
+
+        /**
+         * MediaScanner behavior on boot.
+         * 0 = enabled
+         * 1 = ask (notification)
+         * 2 = disabled
+         * @hide
+         */
+        public static final String MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
+
+        /**
+         * @hide
+         */
+        public static final String OMNIJAWS_WEATHER_ICON_PACK = "omnijaws_weather_icon_pack";
+
+        /**
+         * Change quick settings tiles animation style
+         *
          * @hide
          */
         public static final String STATUS_BAR_SHOW_CARRIER = "status_bar_show_carrier";
