@@ -56,6 +56,7 @@ import com.android.systemui.qs.tiles.ImageTile;
 import com.android.systemui.qs.tiles.ImeTile;
 import com.android.systemui.qs.tiles.IntentTile;
 import com.android.systemui.qs.tiles.LocationTile;
+import com.android.systemui.qs.tiles.LockscreenToggleTile;
 import com.android.systemui.qs.tiles.NfcTile;
 import com.android.systemui.qs.tiles.MusicTile;
 import com.android.systemui.qs.tiles.NightDisplayTile;
@@ -480,6 +481,7 @@ public class QSTileHost implements QSTile.Host, Tunable {
                 return null;
             }
         }
+        else if (tileSpec.equals("lockscreen")) return  new LockscreenToggleTile(this);
         // Intent tiles.
         else if (tileSpec.startsWith(IntentTile.PREFIX)) return IntentTile.create(this,tileSpec);
         else if (tileSpec.startsWith(CustomTile.PREFIX)) return CustomTile.create(this,tileSpec);

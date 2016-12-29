@@ -48,4 +48,12 @@
     <string name="pirate_label">Aaarrrggghhh</string>
     <string name="pirate_spec">pirate</string>
 
+    <!-- QS Lockscreen Tile -->
+    <string name="quick_settings_lockscreen_label">Lock screen</string>
+    <string name="quick_settings_lockscreen_label_enforced">Lock screen enforced</string>
+    <string name="accessibility_quick_settings_lock_screen_off">Lock screen off</string>
+    <string name="accessibility_quick_settings_lock_screen_on">Lock screen on</string>
+    <string name="accessibility_quick_settings_lock_screen_changed_off">Lock screen turned off</string>
+    <string name="accessibility_quick_settings_lock_screen_changed_on">Lock screen turned on</string>
+
 </resources>

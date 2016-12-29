@@ -30,6 +30,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.SearchManager;
 import android.app.StatusBarManager;
+import android.app.admin.DevicePolicyManager;
 import android.app.trust.TrustManager;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
@@ -89,6 +90,7 @@ import com.android.systemui.statusbar.phone.PhoneStatusBar;
 import com.android.systemui.statusbar.phone.ScrimController;
 import com.android.systemui.statusbar.phone.StatusBarKeyguardViewManager;
 import com.android.systemui.statusbar.phone.StatusBarWindowManager;
+import com.android.systemui.qs.tiles.LockscreenToggleTile;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -149,6 +151,10 @@ public class KeyguardViewMediator extends SystemUI {
         "com.android.internal.policy.impl.PhoneWindowManager.DELAYED_KEYGUARD";
     private static final String DELAYED_LOCK_PROFILE_ACTION =
             "com.android.internal.policy.impl.PhoneWindowManager.DELAYED_LOCK";
+
+    private static final String KEYGUARD_SERVICE_ACTION_STATE_CHANGE =
+            "com.android.internal.action.KEYGUARD_SERVICE_STATE_CHANGED";
+    private static final String KEYGUARD_SERVICE_EXTRA_ACTIVE = "active";
 
     // used for handler messages
     private static final int SHOW = 2;
@@ -271,6 +277,11 @@ public class KeyguardViewMediator extends SystemUI {
      */
     private IKeyguardExitCallback mExitSecureCallback;
 
+    /**
+     * Whether we are bound to the service delegate
+     */
+    private boolean mKeyguardBound;
+
     // the properties of the keyguard
 
     private KeyguardUpdateMonitor mUpdateMonitor;
@@ -286,6 +297,11 @@ public class KeyguardViewMediator extends SystemUI {
      * called.
      * */
     private boolean mHiding;
+
+    /**
+     * Whether we are disabling the lock screen internally
+     */
+    private boolean mInternallyDisabled = false;
 
     /**
      * we send this intent when the keyguard is dismissed.
@@ -675,6 +691,8 @@ public class KeyguardViewMediator extends SystemUI {
         filter.addAction(DELAYED_LOCK_PROFILE_ACTION);
         filter.addAction(Intent.ACTION_SHUTDOWN);
         mContext.registerReceiver(mBroadcastReceiver, filter);
+        mContext.registerReceiver(mBroadcastReceiver, new IntentFilter(KEYGUARD_SERVICE_ACTION_STATE_CHANGE),
+                android.Manifest.permission.CONTROL_KEYGUARD, null);
 
         mKeyguardDisplayManager = new KeyguardDisplayManager(mContext);
 
@@ -941,6 +959,10 @@ public class KeyguardViewMediator extends SystemUI {
         mDelayedProfileShowingSequence++;
     }
 
+    public boolean isKeyguardBound() {
+        return mKeyguardBound;
+    }
+
     /**
      * Let's us know when the device is waking up.
      */
@@ -1039,6 +1061,23 @@ public class KeyguardViewMediator extends SystemUI {
     }
 
     /**
+     * Set the internal keyguard enabled state. This allows SystemUI to disable the lockscreen,
+     * overriding any apps.
+     * @param enabled
+     */
+    public void setKeyguardEnabledInternal(boolean enabled) {
+        mInternallyDisabled = !enabled;
+        setKeyguardEnabled(enabled);
+        if (mInternallyDisabled) {
+            mNeedToReshowWhenReenabled = false;
+        }
+    }
+
+    public boolean getKeyguardEnabledInternal() {
+        return !mInternallyDisabled;
+    }
+
+    /**
      * Same semantics as {@link android.view.WindowManagerPolicy#enableKeyguard}; provide
      * a way for external stuff to override normal keyguard behavior.  For instance
      * the phone app disables the keyguard when it receives incoming calls.
@@ -1046,6 +1085,12 @@ public class KeyguardViewMediator extends SystemUI {
     public void setKeyguardEnabled(boolean enabled) {
         synchronized (this) {
             if (DEBUG) Log.d(TAG, "setKeyguardEnabled(" + enabled + ")");
+
+            if (mInternallyDisabled && enabled && !lockscreenEnforcedByDevicePolicy()) {
+                // if keyguard is forcefully disabled internally (by lock screen tile), don't allow
+                // it to be enabled externally, unless the device policy manager says so.
+                return;
+            }
 
             mExternallyEnabled = enabled;
 
@@ -1318,6 +1363,23 @@ public class KeyguardViewMediator extends SystemUI {
         return !mUpdateMonitor.isDeviceProvisioned() && !isSecure();
     }
 
+    public boolean lockscreenEnforcedByDevicePolicy() {
+        DevicePolicyManager dpm = (DevicePolicyManager)
+                mContext.getSystemService(Context.DEVICE_POLICY_SERVICE);
+        if (dpm != null) {
+            int passwordQuality = dpm.getPasswordQuality(null);
+            switch (passwordQuality) {
+                case DevicePolicyManager.PASSWORD_QUALITY_ALPHABETIC:
+                case DevicePolicyManager.PASSWORD_QUALITY_ALPHANUMERIC:
+                case DevicePolicyManager.PASSWORD_QUALITY_COMPLEX:
+                case DevicePolicyManager.PASSWORD_QUALITY_NUMERIC:
+                case DevicePolicyManager.PASSWORD_QUALITY_SOMETHING:
+                    return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * Dismiss the keyguard through the security layers.
      * @param allowWhileOccluded if true, dismiss the keyguard even if it's currently occluded.
@@ -1454,6 +1516,11 @@ public class KeyguardViewMediator extends SystemUI {
                 synchronized (KeyguardViewMediator.this){
                     mShuttingDown = true;
                 }
+            } else if (KEYGUARD_SERVICE_ACTION_STATE_CHANGE.equals(intent.getAction())) {
+                mKeyguardBound = intent.getBooleanExtra(KEYGUARD_SERVICE_EXTRA_ACTIVE, false);
+                context.sendBroadcast(new Intent(
+                        LockscreenToggleTile.ACTION_APPLY_LOCKSCREEN_STATE)
+                        .setPackage(context.getPackageName()));
             }
         }
     };
