@@ -29,4 +29,7 @@
   <java-symbol type="color" name="notification_text_default_color" />
   <java-symbol type="color" name="sender_text_color" />
 
+  <!-- High Brightness Mode -->
+  <java-symbol type="bool" name="config_supportHighBrightness" />
+
   </resources>
