@@ -56,4 +56,7 @@
     <string name="accessibility_quick_settings_lock_screen_changed_off">Lock screen turned off</string>
     <string name="accessibility_quick_settings_lock_screen_changed_on">Lock screen turned on</string>
 
+    <!-- VoLTE icon switch -->
+    <string name="status_bar_volte">VoLTE</string>
+
 </resources>
