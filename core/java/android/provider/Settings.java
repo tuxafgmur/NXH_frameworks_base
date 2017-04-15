@@ -8785,8 +8785,10 @@ public final class Settings {
         public static final String ALARM_MANAGER_CONSTANTS = "alarm_manager_constants";
 
         /**
+         * One Handed mode toggle
          * @hide
          */
+        public static final String ONE_HANDED_MODE_UI = "one_handed_mode_ui";
         public static final String SINGLE_HAND_MODE = "single_hand_mode";
 
         /**
