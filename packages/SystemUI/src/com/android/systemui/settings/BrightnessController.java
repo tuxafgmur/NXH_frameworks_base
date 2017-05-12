@@ -33,7 +33,6 @@ import android.provider.Settings;
 import android.service.vr.IVrManager;
 import android.service.vr.IVrStateCallbacks;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -365,8 +364,7 @@ public class BrightnessController implements ToggleSlider.Listener {
     @Override
     public void onChanged(ToggleSlider view, boolean tracking, boolean automatic, int value,
             boolean stopTracking) {
-        // icon cannot change while tracking
-        //updateIcon(mAutomatic);
+        updateIcon(mAutomatic);
         if (mExternalChange) return;
 
         if (mIsVrModeEnabled) {

@@ -46,22 +46,27 @@ import com.android.systemui.tuner.TunerService.Tunable;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import cyanogenmod.providers.CMSettings;
+
 /** View that represents the quick settings tile panel. **/
 public class QSPanel extends LinearLayout implements Tunable, Callback {
 
-    public static final String QS_SHOW_BRIGHTNESS = "qs_show_brightness";
+    public static final String QS_SHOW_BRIGHTNESS_SLIDER =
+            "cmsecure:" + CMSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER;
+    public static final String QS_SHOW_AUTO_BRIGHTNESS =
+            "cmsecure:" + CMSettings.Secure.QS_SHOW_AUTO_BRIGHTNESS;
 
     protected final Context mContext;
     protected final ArrayList<TileRecord> mRecords = new ArrayList<TileRecord>();
     protected final View mBrightnessView;
-    protected final ImageView mBrightnessIcon;
-    protected View mSimSwitcherView = null;
+    protected final ImageView mAutoBrightnessView;
     private final H mHandler = new H();
 
     private int mPanelPaddingBottom;
     private int mBrightnessPaddingTop;
     protected boolean mExpanded;
     protected boolean mListening;
+    private boolean mIsAutomaticBrightnessAvailable = false;
 
     private Callback mCallback;
     private BrightnessController mBrightnessController;
@@ -89,11 +94,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback {
 
         mBrightnessView = LayoutInflater.from(context).inflate(
                 R.layout.quick_settings_brightness_dialog, this, false);
-        ImageView brightnessIcon = (ImageView) mBrightnessView.findViewById(R.id.brightness_icon);
-        brightnessIcon.setVisibility(View.VISIBLE);
         addView(mBrightnessView);
-
-        mBrightnessIcon = (ImageView) mBrightnessView.findViewById(R.id.brightness_icon);
 
         setupTileLayout();
 
@@ -105,6 +106,8 @@ public class QSPanel extends LinearLayout implements Tunable, Callback {
         mBrightnessController = new BrightnessController(getContext(),
                 (ImageView) findViewById(R.id.brightness_icon),
                 (ToggleSlider) findViewById(R.id.brightness_slider));
+
+        mAutoBrightnessView = (ImageView) findViewById(R.id.brightness_icon);
     }
 
     protected void setupTileLayout() {
@@ -112,10 +115,9 @@ public class QSPanel extends LinearLayout implements Tunable, Callback {
                 R.layout.qs_paged_tile_layout, this, false);
         mTileLayout.setListening(mListening);
         addView((View) mTileLayout);
-        if (getResources().getBoolean(
-                com.android.internal.R.bool.config_automatic_brightness_available)) {
-            ((ImageView) findViewById(R.id.brightness_icon)).setVisibility(View.VISIBLE);
-        }
+
+        mIsAutomaticBrightnessAvailable = getResources().getBoolean(
+                com.android.internal.R.bool.config_automatic_brightness_available);
     }
 
     public boolean isShowingCustomize() {
@@ -125,7 +127,9 @@ public class QSPanel extends LinearLayout implements Tunable, Callback {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        TunerService.get(mContext).addTunable(this, QS_SHOW_BRIGHTNESS);
+        TunerService.get(mContext).addTunable(this,
+                QS_SHOW_BRIGHTNESS_SLIDER,
+                QS_SHOW_AUTO_BRIGHTNESS);
         if (mHost != null) {
             setTiles(mHost.getTiles());
         }
@@ -148,8 +152,11 @@ public class QSPanel extends LinearLayout implements Tunable, Callback {
 
     @Override
     public void onTuningChanged(String key, String newValue) {
-        if (QS_SHOW_BRIGHTNESS.equals(key)) {
+        if (QS_SHOW_BRIGHTNESS_SLIDER.equals(key)) {
             mBrightnessView.setVisibility(newValue == null || Integer.parseInt(newValue) != 0
+                    ? VISIBLE : GONE);
+        } else if (QS_SHOW_AUTO_BRIGHTNESS.equals(key) && mIsAutomaticBrightnessAvailable) {
+            mAutoBrightnessView.setVisibility(newValue == null || Integer.parseInt(newValue) != 0
                     ? VISIBLE : GONE);
         }
     }
@@ -166,14 +173,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback {
             }
         }
         return mHost.createTile(subPanel);
-    }
-
-    private void setBrightnessIcon() {
-        boolean brightnessIconEnabled = Settings.System.getIntForUser(
-            mContext.getContentResolver(), Settings.System.BRIGHTNESS_ICON,
-                0, UserHandle.USER_CURRENT) == 1;
-        mBrightnessIcon.setVisibility(brightnessIconEnabled ? View.VISIBLE : View.GONE);
-        updateResources();
     }
 
     public void setBrightnessMirror(BrightnessMirrorController c) {
@@ -265,12 +264,13 @@ public class QSPanel extends LinearLayout implements Tunable, Callback {
         if (mListening) {
             refreshAllTiles();
         }
-        if (listening) {
-            mBrightnessController.registerCallbacks();
-        } else {
-            mBrightnessController.unregisterCallbacks();
+        if (mBrightnessView.getVisibility() == View.VISIBLE) {
+            if (listening) {
+                mBrightnessController.registerCallbacks();
+            } else {
+                mBrightnessController.unregisterCallbacks();
+            }
         }
-        setBrightnessIcon();
     }
 
     public void refreshAllTiles() {
