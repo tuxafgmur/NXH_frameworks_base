@@ -19,6 +19,7 @@
   <!-- Quick Settings tiles -->
   <string name="quick_settings_screenshot_label">Skärmdump</string>
   <string name="quick_settings_reboot_label">Starta om</string>
+  <string name="quick_settings_reboot_recovery_label">Återställning</string>
   <string name="quick_settings_music_label">Musik</string>
   <string name="quick_settings_music_play">Spela</string>
   <string name="quick_settings_music_pause">Pausa</string>
@@ -27,7 +28,10 @@
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated. [CHAR LIMIT=4] -->
   <!-- Free RAM -->
+  <string name="free_ram">Ledigt minne:\u0020</string>
   <!-- Path data for Solid battery -->
   <!-- High Brightness Mode Tile -->
+  <string name="quick_settings_high_brightness">Hög ljusstyrka</string>
+  <string name="high_brightness_warning">Läget för hög ljusstyrka är aktiverat, åsidosätter nuvarande inställningar för ljusstyrka</string>
   <!-- Pirate alert -->
 </resources>
