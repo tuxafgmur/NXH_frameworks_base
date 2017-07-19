@@ -360,6 +360,12 @@ public class WindowManagerService extends IWindowManager.Stub
 
     final private KeyguardDisableHandler mKeyguardDisableHandler;
 
+    // Fields to backup screen size into computeSizeRangesAndScreenLayout procedure.
+    // Thus we not need to do computation when an app is started.
+    static boolean mTbFirst = true;
+    static int 	   mTbsmallestScreenWidthDp = 0;
+    static int 	   mTbscreenLayout = 0;
+
     private final int mSfHwRotation;
 
     final BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
@@ -7595,33 +7601,43 @@ public class WindowManagerService extends IWindowManager.Stub
                   int uiMode, int dw, int dh, float density, Configuration outConfig) {
         // TODO: Multidisplay: for now only use with default display.
 
-        // We need to determine the smallest width that will occur under normal
-        // operation.  To this, start with the base screen size and compute the
-        // width under the different possible rotations.  We need to un-rotate
-        // the current screen dimensions before doing this.
-        int unrotDw, unrotDh;
-        if (rotated) {
-            unrotDw = dh;
-            unrotDh = dw;
+        if (mTbFirst) {
+            // We need to determine the smallest width that will occur under normal
+            // operation.  To this, start with the base screen size and compute the
+            // width under the different possible rotations.  We need to un-rotate
+            // the current screen dimensions before doing this.
+            int unrotDw, unrotDh;
+            if (rotated) {
+                unrotDw = dh;
+                unrotDh = dw;
+            } else {
+                unrotDw = dw;
+                unrotDh = dh;
+            }
+            displayInfo.smallestNominalAppWidth = 1<<30;
+            displayInfo.smallestNominalAppHeight = 1<<30;
+            displayInfo.largestNominalAppWidth = 0;
+            displayInfo.largestNominalAppHeight = 0;
+            adjustDisplaySizeRanges(displayInfo, Surface.ROTATION_0, uiMode, unrotDw, unrotDh);
+            adjustDisplaySizeRanges(displayInfo, Surface.ROTATION_90, uiMode, unrotDh, unrotDw);
+            adjustDisplaySizeRanges(displayInfo, Surface.ROTATION_180, uiMode, unrotDw, unrotDh);
+            adjustDisplaySizeRanges(displayInfo, Surface.ROTATION_270, uiMode, unrotDh, unrotDw);
+            int sl = Configuration.resetScreenLayout(outConfig.screenLayout);
+            sl = reduceConfigLayout(sl, Surface.ROTATION_0, density, unrotDw, unrotDh, uiMode);
+            sl = reduceConfigLayout(sl, Surface.ROTATION_90, density, unrotDh, unrotDw, uiMode);
+            sl = reduceConfigLayout(sl, Surface.ROTATION_180, density, unrotDw, unrotDh, uiMode);
+            sl = reduceConfigLayout(sl, Surface.ROTATION_270, density, unrotDh, unrotDw, uiMode);
+            outConfig.smallestScreenWidthDp = (int)(displayInfo.smallestNominalAppWidth / density);
+            outConfig.screenLayout = sl;
+            // Stores values
+            mTbsmallestScreenWidthDp = outConfig.smallestScreenWidthDp;
+            mTbscreenLayout = outConfig.screenLayout;
+            mTbFirst = false;
         } else {
-            unrotDw = dw;
-            unrotDh = dh;
-        }
-        displayInfo.smallestNominalAppWidth = 1<<30;
-        displayInfo.smallestNominalAppHeight = 1<<30;
-        displayInfo.largestNominalAppWidth = 0;
-        displayInfo.largestNominalAppHeight = 0;
-        adjustDisplaySizeRanges(displayInfo, Surface.ROTATION_0, uiMode, unrotDw, unrotDh);
-        adjustDisplaySizeRanges(displayInfo, Surface.ROTATION_90, uiMode, unrotDh, unrotDw);
-        adjustDisplaySizeRanges(displayInfo, Surface.ROTATION_180, uiMode, unrotDw, unrotDh);
-        adjustDisplaySizeRanges(displayInfo, Surface.ROTATION_270, uiMode, unrotDh, unrotDw);
-        int sl = Configuration.resetScreenLayout(outConfig.screenLayout);
-        sl = reduceConfigLayout(sl, Surface.ROTATION_0, density, unrotDw, unrotDh, uiMode);
-        sl = reduceConfigLayout(sl, Surface.ROTATION_90, density, unrotDh, unrotDw, uiMode);
-        sl = reduceConfigLayout(sl, Surface.ROTATION_180, density, unrotDw, unrotDh, uiMode);
-        sl = reduceConfigLayout(sl, Surface.ROTATION_270, density, unrotDh, unrotDw, uiMode);
-        outConfig.smallestScreenWidthDp = (int)(displayInfo.smallestNominalAppWidth / density);
-        outConfig.screenLayout = sl;
+            // Sets stored values
+            outConfig.smallestScreenWidthDp = mTbsmallestScreenWidthDp;
+            outConfig.screenLayout = mTbscreenLayout;
+        }                         
     }
 
     private int reduceCompatConfigWidthSize(int curSize, int rotation, int uiMode,
