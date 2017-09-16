@@ -19,7 +19,7 @@
   <!-- Quick Settings tiles -->
   <string name="quick_settings_screenshot_label">Captura de pantalla</string>
   <string name="quick_settings_reboot_label">Reiniciar</string>
-  <string name="quick_settings_reboot_recovery_label">Reiniciar en recovery</string>
+  <string name="quick_settings_reboot_recovery_label">Reiniciar en modo recuperación</string>
   <string name="quick_settings_music_label">Música</string>
   <string name="quick_settings_music_play">Reproducir</string>
   <string name="quick_settings_music_pause">Pausar</string>
@@ -37,4 +37,10 @@
   <string name="pirate_label">Aaarrrggghhh</string>
   <string name="pirate_spec">pirata</string>
   <!-- QS Lockscreen Tile -->
+  <string name="quick_settings_lockscreen_label">Pantalla de bloqueo</string>
+  <string name="quick_settings_lockscreen_label_enforced">Pantalla de bloqueo forzada</string>
+  <string name="accessibility_quick_settings_lock_screen_off">Pantalla de bloqueo desactivada</string>
+  <string name="accessibility_quick_settings_lock_screen_on">Pantalla de bloqueo activada.</string>
+  <string name="accessibility_quick_settings_lock_screen_changed_off">Desactivando pantalla de bloqueo</string>
+  <string name="accessibility_quick_settings_lock_screen_changed_on">Activando pantalla de bloqueo</string>
 </resources>
