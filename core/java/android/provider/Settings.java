@@ -4051,6 +4051,14 @@ public final class Settings {
          */
         public static final String QS_TILE_TITLE_VISIBILITY = "qs_tile_title_visibility";
 
+
+        /**
+          * Whether to allow adding/removing qs tiles with a tap
+          *
+          * @hide
+          */
+         public static final String QUICK_TILE_ADD = "qs_tile_tap_to_add";
+ 
         /**
          * @hide
          */
