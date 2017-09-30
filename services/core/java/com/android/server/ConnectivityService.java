@@ -188,7 +188,7 @@ public class ConnectivityService extends IConnectivityManager.Stub
     private static final boolean VDBG = false;
 
     private static final boolean LOGD_RULES = false;
-    private static final boolean LOGD_BLOCKED_NETWORKINFO = true;
+    private static final boolean LOGD_BLOCKED_NETWORKINFO = false;
 
     // TODO: create better separation between radio types and network types
 
@@ -526,7 +526,7 @@ public class ConnectivityService extends IConnectivityManager.Stub
      */
     private class LegacyTypeTracker {
 
-        private static final boolean DBG = true;
+        private static final boolean DBG = false;
         private static final boolean VDBG = false;
 
         /**
