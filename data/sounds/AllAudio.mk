@@ -79,6 +79,8 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/ringtones/Zirconium.ogg:system/media/audio/ringtones/Zirconium.ogg
 
 PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/effects/AudioEnd.ogg:system/media/audio/ui/audio_end.ogg \
+	$(LOCAL_PATH)/effects/AudioInitiate.ogg:system/media/audio/ui/audio_initiate.ogg \
 	$(LOCAL_PATH)/effects/CameraClick.ogg:system/media/audio/ui/camera_click.ogg \
 	$(LOCAL_PATH)/effects/CameraFocus.ogg:system/media/audio/ui/camera_focus.ogg \
 	$(LOCAL_PATH)/effects/Dock.ogg:system/media/audio/ui/Dock.ogg \
@@ -90,6 +92,11 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/effects/KeypressStandard.ogg:system/media/audio/ui/KeypressStandard.ogg \
 	$(LOCAL_PATH)/effects/Lock.ogg:system/media/audio/ui/Lock.ogg \
 	$(LOCAL_PATH)/effects/LowBattery.ogg:system/media/audio/ui/LowBattery.ogg \
+	$(LOCAL_PATH)/effects/NFCFailure.ogg:system/media/audio/ui/NFCFailure.ogg \
+	$(LOCAL_PATH)/effects/NFCInitiated.ogg:system/media/audio/ui/NFCInitiated.ogg \
+	$(LOCAL_PATH)/effects/NFCSuccess.ogg:system/media/audio/ui/NFCSuccess.ogg \
+	$(LOCAL_PATH)/effects/NFCTransferComplete.ogg:system/media/audio/ui/NFCTransferComplete.ogg \
+	$(LOCAL_PATH)/effects/NFCTransferInitiated.ogg:system/media/audio/ui/NFCTransferInitiated.ogg \
 	$(LOCAL_PATH)/effects/Trusted.ogg:system/media/audio/ui/Trusted.ogg \
 	$(LOCAL_PATH)/effects/Undock.ogg:system/media/audio/ui/Undock.ogg \
 	$(LOCAL_PATH)/effects/Unlock.ogg:system/media/audio/ui/Unlock.ogg \
