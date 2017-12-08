@@ -514,14 +514,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Điều khiển thông báo nguồn"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Bật"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Tắt"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Với các kiểm soát thông báo nguồn, bạn có thể đặt cấp độ quan trọng từ 0 đến 5 cho các thông báo của ứng dụng. \n\n"<b>"Cấp 5"</b>" \n- Hiển thị ở đầu danh sách thông báo \n- Cho phép gián đoạn ở chế độ toàn màn hình \n- Luôn xem nhanh \n\n"<b>"Cấp 4"</b>" \n- Ngăn gián đoạn ở chế độ toàn màn hình \n- Luôn xem nhanh \n\n"<b>"Cấp 3"</b>" \n- Ngăn gián đoạn ở chế độ toàn màn hình \n- Không bao giờ xem nhanh \n\n"<b>"Cấp 2"</b>" \n- Ngăn gián đoạn ở chế độ toàn màn hình \n- Không bao giờ xem nhanh \n- Không bao giờ có âm báo và rung \n\n"<b>"Cấp 1"</b>" \n- Ngăn gián đoạn ở chế độ toàn màn hình \n- Không bao giờ xem nhanh \n- Không bao giờ có âm báo và rung \n- Ẩn khỏi màn hình khóa và thanh trạng thái \n- Hiển thị ở cuối danh sách thông báo \n\n"<b>"Cấp 0"</b>" \n- Chặn tất cả các thông báo từ ứng dụng"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Tầm quan trọng: Tự động"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Tầm quan trọng: Cấp 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"Tầm quan trọng: Cấp 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"Tầm quan trọng: Cấp 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Tầm quan trọng: Cấp 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Tầm quan trọng: Cấp 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Tầm quan trọng: Cấp 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Ứng dụng xác định tầm quan trọng cho từng thông báo."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Không bao giờ hiển thị thông báo từ ứng dụng này."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Ko có rung, âm báo, xem nhanh, gián đoạn ở toàn màn hình. Ẩn khỏi màn hình khóa và thanh trạng thái."</string>

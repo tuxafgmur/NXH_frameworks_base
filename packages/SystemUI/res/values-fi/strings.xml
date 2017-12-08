@@ -512,14 +512,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Ilmoitusten tehohallinta"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Käytössä"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Pois käytöstä"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Ilmoitusten tehohallinnan avulla voit määrittää sovelluksen ilmoituksille tärkeystason väliltä 0–5. \n\n"<b>"Taso 5"</b>" \n– Ilmoitukset näytetään ilmoitusluettelon yläosassa \n– Näkyminen koko näytön tilassa sallitaan \n– Ilmoitukset kurkistavat aina näytölle\n\n"<b>"Taso 4"</b>" \n– Näkyminen koko näytön tilassa estetään \n– Ilmoitukset kurkistavat aina näytölle \n\n"<b>"Taso 3"</b>" \n– Näkyminen koko näytön tilassa estetään \n– Ei kurkistamista \n\n"<b>"Taso 2"</b>" \n– Näkyminen koko näytön tilassa estetään \n– Ei kurkistamista \n– Ei ääniä eikä värinää \n\n"<b>"Taso 1"</b>" \n– Näkyminen koko näytön tilassa estetään \n– Ei kurkistamista \n– Ei ääniä eikä värinää \n– Ilmoitukset piilotetaan lukitusnäytöltä ja tilapalkista \n– Ilmoitukset näytetään ilmoitusluettelon alaosassa \n\n"<b>"Taso 0"</b>" \n– Kaikki sovelluksen ilmoitukset estetään"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Tärkeys: automaattinen"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Tärkeys: taso 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"Tärkeys: taso 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"Tärkeys: taso 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Tärkeys: taso 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Tärkeys: taso 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Tärkeys: taso 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Sovellus määrittää kunkin ilmoituksen tärkeyden"</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Älä koskaan näytä ilmoituksia tästä sovelluksesta"</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Estä kurkistaminen, ääni, värinä ja näkyminen koko näytön tilassa, lukitusnäytöllä ja tilapalkissa"</string>

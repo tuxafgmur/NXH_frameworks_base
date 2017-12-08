@@ -512,14 +512,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Kontrol notifikasi daya"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Aktif"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Nonaktif"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Dengan kontrol notifikasi daya, Anda dapt menyetel level kepentingan notifikasi aplikasi dari 0 sampai 5. \n\n"<b>"Level 5"</b>" \n- Muncul di atas daftar notifikasi \n- Izinkan interupsi layar penuh \n- Selalu intip pesan \n\n"<b>"Level 4"</b>" \n- Jangan interupsi layar penuh \n- Selalu intip pesan \n\n"<b>"Level 3"</b>" \n- Jangan interupsi layar penuh \n- Tak pernah intip pesan \n\n"<b>"Level 2"</b>" \n- Jangan interupsi layar penuh \n- Tak pernah intip pesan \n- Tanpa suara dan getaran \n\n"<b>"Level 1"</b>" \n- Jangan interupsi layar penuh \n- Tak pernah intip pesan \n- Tanpa suara atau getaran \n- Sembunyikan dari layar kunci dan bilah status \n- Muncul di bawah daftar notifikasi \n\n"<b>"Level 0"</b>" \n- Blokir semua notifikasi dari aplikasi"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Level kepentingan: Otomatis"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Level kepentingan: Level 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"Level kepentingan: Level 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"Level kepentingan: Level 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Level kepentingan: Level 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Level kepentingan: Level 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Level kepentingan: Level 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Aplikasi menentukan level kepentingan setiap notifikasi."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Jangan pernah tampilkan notifikasi dari aplikasi ini."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Tak ada interupsi layar, intip pesan, suara, atau getar. Sembunyikan dari layar kunci &amp; bilah status."</string>

@@ -516,14 +516,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Zaawansowane ustawienia powiadomień"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Wł."</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Wył."</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Dzięki zaawansowanym ustawieniom możesz określić poziom ważności powiadomień z aplikacji w skali od 0 do 5. \n\n"<b>"Poziom 5"</b>" \n– Pokazuj u góry listy powiadomień \n– Zezwalaj na powiadomienia na pełnym ekranie \n– Zawsze pokazuj podgląd \n\n"<b>"Poziom 4"</b>" \n– Wyłącz powiadomienia na pełnym ekranie \n– Zawsze pokazuj podgląd \n\n"<b>"Poziom 3"</b>" \n– Wyłącz powiadomienia na pełnym ekranie \n– Nigdy nie pokazuj podglądu \n\n"<b>"Poziom 2"</b>" \n– Wyłącz powiadomienia na pełnym ekranie \n– Nigdy nie pokazuj podglądu \n– NIgdy nie powiadamiaj dźwiękiem ani wibracjami \n\n"<b>"Poziom 1"</b>" \n– Wyłącz powiadomienia na pełnym ekranie \n– Nigdy nie pokazuj podglądu \n– NIgdy nie powiadamiaj dźwiękiem ani wibracjami \n– Ukrywaj na ekranie blokady i pasku stanu \n– Pokazuj u dołu listy powiadomień \n\n"<b>"Poziom 0"</b>" \n– Blokuj wszystkie powiadomienia aplikacji"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Ważność: automatycznie"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Ważność: poziom 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"Ważność: poziom 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"Ważność: poziom 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Ważność: poziom 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Ważność: poziom 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Ważność: poziom 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Aplikacja określa ważność każdego powiadomienia."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Nigdy nie pokazuj powiadomień z tej aplikacji."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Nie pokazuj powiadomień na pełnym ekranie (ani ich podglądu) i nie sygnalizuj ich dźwiękiem ani wibracjami. Ukrywaj je na ekranie blokady i pasku stanu."</string>

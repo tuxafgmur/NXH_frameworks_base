@@ -514,14 +514,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Напредне контроле за обавештења"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Укључено"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Искључено"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Помоћу напредних контрола за обавештења можете да подесите ниво важности од 0. до 5. за обавештења апликације. \n\n"<b>"5. ниво"</b>" \n– Приказују се у врху листе обавештења \n- Дозволи прекид режима целог екрана \n– Увек завируј \n\n"<b>"4. ниво"</b>" \n– Спречи прекид режима целог екрана \n– Увек завируј \n\n"<b>"3. ниво"</b>" \n– Спречи прекид режима целог екрана \n– Никада не завируј \n\n"<b>"2. ниво"</b>" \n– Спречи прекид режима целог екрана \n– Никада не завируј \n– Никада не производи звук или вибрацију \n\n"<b>"1. ниво"</b>" \n– Спречи прекид режима целог екрана \n– Никада не завируј \n– Никада не производи звук или вибрацију \n– Сакриј на закључаном екрану и статусној траци \n– Приказују се у дну листе обавештења \n\n"<b>"0. ниво"</b>" \n– Блокирај сва обавештења из апликације"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Важност: Аутоматски"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Важност: 0. ниво"</string>
-    <string name="min_importance" msgid="560779348928574878">"Важност: 1. ниво"</string>
-    <string name="low_importance" msgid="7571498511534140">"Важност: 2. ниво"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Важност: 3. ниво"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Важност: 4. ниво"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Важност: 5. ниво"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Апликација одређује важност сваког обавештења."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Никада не приказуј обавештења из ове апликације"</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Без прекида режима целог екрана, завиривања, звука или вибрације. Сакриј на закључаном екрану и статусној траци."</string>

@@ -514,14 +514,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Barošanas paziņojumu vadīklas"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Ieslēgts"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Izslēgts"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Izmantojot barošanas paziņojumu vadīklas, varat lietotnes paziņojumiem iestatīt svarīguma līmeni (no 0 līdz 5). \n\n"<b>"5. līmenis"</b>" \n- Tiek rādīts paziņojumu saraksta augšdaļā \n- Tiek atļauta pilnekrāna režīma pārtraukšana \n- Ieskats vienmēr atļauts \n\n"<b>"4. līmenis"</b>" \n- Tiek novērsta pilnekrāna režīma pārtraukšana \n- Ieskats vienmēr atļauts \n\n"<b>"3. līmenis"</b>" \n- Tiek novērsta pilnekrāna režīma pārtraukšana \n- Ieskats nav atļauts \n\n"<b>"2. līmenis"</b>" \n- Tiek novērsta pilnekrāna režīma pārtraukšana \n- Ieskats nav atļauts \n- Nav atļautas skaņas un vibrosignāls \n\n"<b>"1. līmenis"</b>" \n- Tiek novērsta pilnekrāna režīma pārtraukšana \n- Ieskats nav atļauts \n- Nav atļautas skaņas un vibrosignāls \n- Paziņojumi tiek paslēpti bloķēšanas ekrānā un statusa joslā \n- Paziņojumi tiek rādīti paziņojumu saraksta apakšdaļā \n\n"<b>"0. līmenis"</b>" \n- Visi lietotnes paziņojumi tiek bloķēti"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Svarīgums: automātisks"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Svarīguma līmenis: 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"Svarīguma līmenis: 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"Svarīguma līmenis: 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Svarīguma līmenis: 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Svarīguma līmenis: 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Svarīguma līmenis: 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Lietotne nosaka katra paziņojuma svarīgumu."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Nekad nerādīt paziņojumus no šīs lietotnes."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Bez pilnekrāna pārtraukšanas, ieskata, skaņas, vibrācijas. Paslēpt bloķēšanas ekrānā, statusa joslā."</string>

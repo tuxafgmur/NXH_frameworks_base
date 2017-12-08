@@ -512,14 +512,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"পাওয়ার বিজ্ঞপ্তির নিয়ন্ত্রণগুলি"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"চালু আছে"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"বন্ধ আছে"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"পাওয়ার বিজ্ঞপ্তির নিয়ন্ত্রণগুলি ব্যহবার করে, আপনি কোনো অ্যাপ্লিকেশানের বিজ্ঞপ্তির জন্য ০ থেকে ৫ পর্যন্ত একটি গুরুত্বের লেভেলকে সেট করতে পারবেন৷ \n\n"<b>"লেভেল ৫"</b>" \n- বিজ্ঞপ্তি তালিকার শীর্ষে দেখায় \n- পূর্ণ স্ক্রীনের বাধাকে অনুমতি দেয় \n- সর্বদা স্ক্রীনে উপস্থিত হয় \n\n"<b>"লেভেল ৪"</b>" \n- পূর্ণ স্ক্রীনের বাধাকে আটকায় \n- সর্বদা স্ক্রীনে উপস্থিত হয় \n\n"<b>"লেভেল ৩"</b>" \n- পূর্ণ স্ক্রীনের বাধাকে আটকায় \n- কখনই স্ক্রীনে উপস্থিত হয় না \n\n"<b>"লেভেল ২"</b>" \n- পূর্ণ স্ক্রীনের বাধাকে আটকায় \n- কখনই স্ক্রীনে উপস্থিত হয় না \n- কখনই শব্দ এবং কম্পন করে না \n\n"<b>"লেভেল ১"</b>" \n- পূর্ণ স্ক্রীনের বাধাকে আটকায় \n- কখনই স্ক্রীনে উপস্থিত হয় না \n- কখনই শব্দ এবং কম্পন করে না \n- লক স্ক্রীন এবং স্থিতি দন্ড থেকে লুকায় \n- বিজ্ঞপ্তি তালিকার নীচের দিকে দেখায় \n\n"<b>"লেভেল ০"</b>" \n- অ্যাপ্লিকেশান থেকে সমস্ত বিজ্ঞপ্তিকে অবরূদ্ধ করে"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"গুরুত্ব: স্বয়ংক্রিয়"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"গুরুত্ব: লেভেল ০"</string>
-    <string name="min_importance" msgid="560779348928574878">"গুরুত্ব: লেভেল ১"</string>
-    <string name="low_importance" msgid="7571498511534140">"গুরুত্ব: লেভেল ২"</string>
-    <string name="default_importance" msgid="7609889614553354702">"গুরুত্ব: লেভেল ৩"</string>
-    <string name="high_importance" msgid="3441537905162782568">"গুরুত্ব: লেভেল ৪"</string>
-    <string name="max_importance" msgid="4880179829869865275">"গুরুত্ব: লেভেল ৫"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"অ্যাপ্লিকেশান প্রতিটি বিজ্ঞপ্তির গুরুত্ব নির্ধারণ করে৷"</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"এই অ্যাপ্লিকেশান থেকে কখনোই বিজ্ঞপ্তিগুলিকে দেখাবে না।"</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"পূর্ণ স্ক্রীনের কোনো বাধা নেই, স্ক্রীনে উপস্থিত হয় না, শব্দ বা কম্পন করে না৷ লক স্ক্রীন এবং স্থিতি দন্ড থেকে লুকায়৷"</string>

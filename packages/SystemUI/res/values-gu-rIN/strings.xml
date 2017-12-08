@@ -512,14 +512,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"પાવર સૂચના નિયંત્રણો"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"ચાલુ"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"બંધ"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"પાવર સૂચના નિયંત્રણો સાથે, તમે ઍપ્લિકેશનની સૂચનાઓ માટે 0 થી 5 સુધીના મહત્વના સ્તરને સેટ કરી શકો છો. \n\n"<b>"સ્તર 5"</b>" \n- સૂચના સૂચિની ટોચ પર બતાવો \n- પૂર્ણ સ્ક્રીન અવરોધની મંજૂરી આપો \n- હંમેશાં ત્વરિત દૃષ્ટિ કરો \n\n"<b>"સ્તર 4"</b>" \n- પૂર્ણ સ્ક્રીન અવરોધ અટકાવો \n- હંમેશાં ત્વરિત દૃષ્ટિ કરો \n\n"<b>"સ્તર 3"</b>" \n- પૂર્ણ સ્ક્રીન અવરોધ અટકાવો \n- ક્યારેય ત્વરિત દૃષ્ટિ કરશો નહીં \n\n"<b>"સ્તર 2"</b>" \n- પૂર્ણ સ્ક્રીન અવરોધ અટકાવો \n- ક્યારેય ત્વરિત દૃષ્ટિ કરશો નહીં \n- ક્યારેય અવાજ અને વાઇબ્રેશન કરશો નહીં \n\n"<b>"સ્તર 1"</b>" \n- પૂર્ણ સ્ક્રીન અવરોધ અટકાવો \n- ક્યારેય ત્વરિત દૃષ્ટિ કરશો નહીં \n- ક્યારેય અવાજ અથવા વાઇબ્રેટ કરશો નહીં \n- લૉક સ્ક્રીન અને સ્થિતિ બારથી છુપાવો \n- સૂચના સૂચિના તળિયા પર બતાવો \n\n"<b>"સ્તર 0"</b>" \n- ઍપ્લિકેશનની તમામ સૂચનાઓને અવરોધિત કરો"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"મહત્વ: સ્વચલિત"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"મહત્વ: સ્તર 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"મહત્વ: સ્તર 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"મહત્વ: સ્તર 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"મહત્વ: સ્તર 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"મહત્વ: સ્તર 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"મહત્વ: સ્તર 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"દરેક સૂચના માટે મહત્વને ઍપ્લિકેશન નિર્ધારિત કરે છે."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"આ ઍપ્લિકેશનમાંથી ક્યારેય સૂચનાઓ બતાવશો નહીં."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"કોઈ પૂર્ણ સ્ક્રીન અવરોધ, ત્વરિત દૃષ્ટિ, અવાજ અથવા વાઇબ્રેશન નહીં. લૉક સ્ક્રીન અને સ્થિતિ બારથી છુપાવો."</string>

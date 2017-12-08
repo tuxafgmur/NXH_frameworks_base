@@ -518,14 +518,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Rozšířené ovládací prvky oznámení"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Zapnuto"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Vypnuto"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Rozšířené ovládací prvky oznámení umožňují nastavit úroveň důležitosti oznámení aplikace od 0 do 5. \n\n"<b>"Úroveň 5"</b>" \n– Zobrazit na začátku seznamu oznámení \n– Povolit vyrušení na celou obrazovku \n– Vždy zobrazit náhled \n\n"<b>"Úroveň 4"</b>" \n– Zabránit vyrušení na celou obrazovku \n– Vždy zobrazit náhled \n\n"<b>"Úroveň 3"</b>" \n– Zabránit vyrušení na celou obrazovku \n– Nikdy nezobrazovat náhled \n\n"<b>"Úroveň 2"</b>" \n– Zabránit vyrušení na celou obrazovku \n– Nikdy nezobrazovat náhled \n– Nikdy nevydávat žádný zvukový signál ani nevibrovat \n\n"<b>"Úroveň 1"</b>" \n– Zabránit vyrušení na celou obrazovku \n– Nikdy nezobrazovat náhled \n– Nikdy nevydávat zvukový signál ani nevibrovat \n– Skrýt z obrazovky uzamčení a stavového řádku \n– Zobrazovat na konci seznamu oznámení \n\n"<b>";Úroveň 0"</b>" \n– Blokovat všechna oznámení z aplikace"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Důležitost: automatická"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Důležitost: úroveň 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"Důležitost: úroveň 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"Důležitost: úroveň 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Důležitost: úroveň 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Důležitost: úroveň 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Důležitost: úroveň 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Důležitost každého oznámení určuje aplikace."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Oznámení této aplikace nikdy nezobrazovat."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Žádné vyrušení na celou obrazovku, náhled, zvuk ani vibrace. Skrýt na obrazovce uzamčení a stavovém řádku."</string>

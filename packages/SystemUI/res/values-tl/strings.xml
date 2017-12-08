@@ -512,14 +512,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Mga kontrol sa notification ng power"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Naka-on"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Naka-off"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Sa pamamagitan ng mga kontrol sa notification ng power, magagawa mong itakda ang antas ng kahalagahan ng mga notification ng isang app mula 0 hanggang 5. \n\n"<b>"Antas 5"</b>" \n- Ipakita sa itaas ng listahan ng notification \n- Payagan ang pag-istorbo kapag full screen \n- Palaging sumilip \n\n"<b>"Antas 4"</b>" \n- Pigilan ang pag-istorbo kapag full screen \n- Palaging sumilip \n\n"<b>"Antas 3"</b>" \n- Pigilan ang pag-istorbo kapag full screen \n- Huwag kailanman sumilip \n\n"<b>"Antas 2"</b>" \n- Pigilan ang pag-istorbo kapag full screen \n- Huwag kailanman sumilip \n- Huwag kailanman tumunog o mag-vibrate \n\n"<b>"Antas 1"</b>" \n- Pigilan ang pag-istorbo kapag full screen \n- Huwag kailanman sumilip \n- Huwag kailanman tumunog o mag-vibrate \n- Itago sa lock screen at status bar \n- Ipakita sa ibaba ng listahan ng notification \n\n"<b>"Antas 0"</b>" \n- I-block ang lahat ng notification mula sa app"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Kahalagahan: Awtomatiko"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Kahalagahan: Antas 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"Kahalagahan: Antas 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"Kahalagahan: Antas 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Kahalagahan: Antas 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Kahalagahan: Antas 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Kahalagahan: Antas 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Tinutukoy ng app ang kahalagahan ng bawat notification."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Huwag kailanman magpakita ng mga notification mula sa app na ito."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Walang pag-istorbo, pagsilip, pagtunog o pag-vibrate kapag full screen. Itago sa lock screen at status bar."</string>

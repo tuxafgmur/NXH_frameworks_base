@@ -512,14 +512,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Güç bildirim kontrolleri"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Açık"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Kapalı"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Güç bildirim kontrolleriyle, bir uygulamanın bildirimleri için 0 ile 5 arasında bir önem düzeyi ayarlayabilirsiniz. \n\n"<b>"5. Düzey"</b>" \n- Bildirim listesinin en üstünde gösterilsin \n- Tam ekran kesintisine izin verilsin \n- Ekranda her zaman kısaca belirsin \n\n"<b>"4. Düzey"</b>" \n- Tam ekran kesintisi engellensin \n- Ekranda her zaman kısaca belirsin \n\n"<b>"3. Düzey"</b>" \n- Tam ekran kesintisi engellensin \n- Ekranda hiçbir zaman kısaca belirmesin \n\n"<b>"2. Düzey"</b>" \n- Tam ekran kesintisi engellensin \n- Ekranda hiçbir zaman belirmesin \n- Hiçbir zaman ses çıkarmasın ve titreştirmesin \n\n"<b>"1. Düzey"</b>" \n- Tam ekran kesintisi engellensin \n- Ekranda hiçbir zaman kısaca belirmesin \n- Hiçbir zaman ses çıkarmasın veya titreştirmesin \n- Kilit ekranından ve durum çubuğundan gizlensin \n- Bildirim listesinin en altında gösterilsin \n\n"<b>"0. Düzey"</b>" \n- Uygulamadan gelen tüm bildirimler engellensin"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Önem düzeyi: Otomatik"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Önem düzeyi: 0. Düzey"</string>
-    <string name="min_importance" msgid="560779348928574878">"Önem düzeyi: 1. Düzey"</string>
-    <string name="low_importance" msgid="7571498511534140">"Önem düzeyi: 2. Düzey"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Önem düzeyi: 3. Düzey"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Önem düzeyi: 4. Düzey"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Önem düzeyi: 5. Düzey"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Her bir bildirimin önem düzeyini uygulama belirler."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Bu uygulamadan gelen bildirimleri asla gösterme."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Tam ekran kesintisi, ekranda kısaca belirme, ses veya titreşim yok. Kilit ekranından ve durum çubuğundan gizlensin."</string>

@@ -516,14 +516,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Galingi pranešimų valdikliai"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Įjungta"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Išjungta"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Naudodami pranešimų valdiklius galite nustatyti programos pranešimų svarbos lygį nuo 0 iki 5. \n\n"<b>"5 lygis"</b>" \n– Rodyti pranešimų sąrašo viršuje \n– Leisti pertraukti, kai veikia viso ekrano režimas \n– Visada rodyti pranešimus \n\n"<b>"4 lygis"</b>" \n– Neleisti pertraukti viso ekrano režimo \n– Visada rodyti pranešimus \n\n"<b>"3 lygis"</b>" \n– Neleisti pertraukti viso ekrano režimo \n– Niekada nerodyti pranešimų \n\n"<b>"2 lygis"</b>" \n– Neleisti pertraukti viso ekrano režimo \n– Niekada nerodyti pranešimų \n– Niekada neleisti garso ir nevibruoti \n\n"<b>"1 lygis"</b>" \n– Neleisti pertraukti viso ekrano režimo \n– Niekada nerodyti pranešimų \n– Niekada neleisti garso ir nevibruoti \n– Slėpti užrakinimo ekrane ir būsenos juostoje \n– Rodyti pranešimų sąrašo apačioje \n\n"<b>"0 lygis"</b>" \n– Blokuoti visus programos pranešimus"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Svarba: automatinė"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Svarba: 0 lygis"</string>
-    <string name="min_importance" msgid="560779348928574878">"Svarba: 1 lygis"</string>
-    <string name="low_importance" msgid="7571498511534140">"Svarba: 2 lygis"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Svarba: 3 lygis"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Svarba: 4 lygis"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Svarba: 5 lygis"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Programa nustato kiekvieno pranešimo svarbą."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Niekada nerodyti iš šios programos gautų pranešimų."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Viso ekrano režimas nepertraukiamas, nerodomi jokie pranešimai, neleidžiami garsai ir nevibruojama. Slėpti nuo užrakinimo ekrano ir būsenos juostos."</string>

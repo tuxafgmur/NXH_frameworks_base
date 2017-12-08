@@ -512,14 +512,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"کنترل‌های قدرتمند اعلان"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"روشن"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"خاموش"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"با کنترل‌های قدرتمند اعلان می‌توانید سطح اهمیت اعلان‌های هر برنامه را از ۰ تا ۵ تعیین کنید. \n\n"<b>"سطح ۵"</b>" \n- در صدر فهرست اعلان‌ها نشان داده می‌شود \n- وقفه برای نمایش تمام‌صفحه مجاز است \n- همیشه اجمالی نشان داده می‌شود \n\n"<b>"سطح ۴"</b>" \n- وقفه برای نمایش تمام‌صفحه مجاز نیست \n- همیشه اجمالی نشان داده می‌شود \n\n"<b>"سطح ۳"</b>" \n- وقفه برای نمایش تمام‌صفحه مجاز نیست \n- هیچ‌وقت اجمالی نشان داده نمی‌شود \n\n"<b>"سطح ۲"</b>" \n- وقفه برای نمایش تمام‌صفحه مجاز نیست \n- هیچ‌وقت اجمالی نشان داده نمی‌شود \n- هیچ‌وقت صدا و لرزش ایجاد نمی‌کند \n\n"<b>"سطح ۱"</b>" \n- نمایش تمام صفحه مجاز نیست \n- هیچ‌وقت اجمالی نشان داده نمی‌شود \n- هیچ‌وقت صدا یا لرزش ایجاد نمی‌کند \n- در قفل صفحه و نوار وضعیت پنهان است \n- در پایین فهرست اعلان‌ها نشان داده می‌شود \n\n"<b>"سطح ۰"</b>" \n- همه اعلان‌های این برنامه مسدود است"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"اهمیت: خودکار"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"اهمیت: سطح ۰"</string>
-    <string name="min_importance" msgid="560779348928574878">"اهمیت: سطح ۱"</string>
-    <string name="low_importance" msgid="7571498511534140">"اهمیت: سطح ۲"</string>
-    <string name="default_importance" msgid="7609889614553354702">"اهمیت: سطح ۳"</string>
-    <string name="high_importance" msgid="3441537905162782568">"اهمیت: سطح ۴"</string>
-    <string name="max_importance" msgid="4880179829869865275">"اهمیت: سطح ۵"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"برنامه اهمیت هر اعلان را تعیین می‌کند."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"اعلان‌های این برنامه هرگز نشان داده نمی‌شود."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"بدون وقفه نمایش تمام‌صفحه، نمایش اجمالی، صدا یا لرزش. عدم نمایش در قفل صفحه و نوار وضعیت."</string>

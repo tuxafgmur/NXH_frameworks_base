@@ -512,14 +512,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"उर्जा सूचना नियंत्रणे"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"चालू"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"बंद"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"उर्जा सूचना नियंत्रणांसह, आपण अॅपच्या सूचनांसाठी महत्त्व स्तर 0 ते 5 पर्यंत सेट करू शकता. \n\n"<b>"स्तर 5"</b>" \n- सूचना सूचीच्या शीर्षस्थानी दर्शवा \n- पूर्ण स्क्रीन व्यत्ययास अनुमती द्या \n- नेहमी डोकावून पहा \n\n"<b>"स्तर 4"</b>" \n- पूर्ण स्क्रीन व्यत्ययास प्रतिबंधित करा \n- नेहमी डोकावून पहा \n\n"<b>"स्तर 3"</b>" \n- पूर्ण स्क्रीन व्यत्ययास प्रतिबंधित करा \n- कधीही डोकावून पाहू नका \n\n"<b>"स्तर 2"</b>" \n- पूर्ण स्क्रीन व्यत्ययास प्रतिबंधित करा \n- कधीही डोकावून पाहू नका \n- कधीही ध्वनी किंवा कंपन करू नका \n\n"<b>"स्तर 1"</b>" \n- पूर्ण स्क्रीन व्यत्ययास प्रतिबंधित करा \n- कधीही डोकावून पाहू नका \n- कधीही ध्वनी किंवा कंपन करू नका \n- लॉक स्क्रीन आणि स्टेटस बार मधून लपवा \n- सूचना सूचीच्या तळाशी दर्शवा \n\n"<b>"स्तर 0"</b>" \n- अॅपमधील सर्व सूचना अवरोधित करा"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"महत्त्व: स्वयंचलित"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"महत्त्व: स्तर 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"महत्त्व: स्तर 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"महत्त्व: स्तर 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"महत्त्व: स्तर 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"महत्त्व: स्तर 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"महत्त्व: स्तर 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"अॅप प्रत्येक सूचनेसाठी महत्त्व निर्धारित करतो."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"या अॅपमधील सूचना कधीही दर्शवू नका."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"पूर्ण स्क्रीन व्यत्यय, डोकावून पाहणे, ध्वनी किंवा कंपन नाही. लॉक स्क्रीन आणि स्टेटस बार मधून लपवा."</string>

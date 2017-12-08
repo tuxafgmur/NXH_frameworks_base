@@ -514,14 +514,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"電源通知管理"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"ON"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"OFF"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"電源通知管理では、アプリの通知の重要度をレベル 0～5 で設定できます。\n\n"<b>"レベル 5"</b>" \n- 通知リストの一番上に表示する \n- 全画面表示を許可する \n- 常にポップアップする \n\n"<b>"レベル 4"</b>" \n- 全画面表示しない \n- 常にポップアップする \n\n"<b>"レベル 3"</b>" \n- 全画面表示しない \n- ポップアップしない \n\n"<b>"レベル 2"</b>" \n- 全画面表示しない \n- ポップアップしない \n- 音やバイブレーションを使用しない \n\n"<b>"レベル 1"</b>" \n- 全画面表示しない \n- ポップアップしない \n- 音やバイブレーションを使用しない \n- ロック画面やステータスバーに表示しない \n- 通知リストの一番下に表示する \n\n"<b>"レベル 0"</b>" \n- アプリからのすべての通知をブロックする"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"重要度: 自動"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"重要度: レベル 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"重要度: レベル 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"重要度: レベル 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"重要度: レベル 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"重要度: レベル 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"重要度: レベル 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"アプリが通知ごとに重要度を識別する"</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"このアプリからの通知を表示しない"</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"全画面表示、ポップアップ、音、バイブレーションを使用しない。ロック画面やステータスバーにも表示しない"</string>

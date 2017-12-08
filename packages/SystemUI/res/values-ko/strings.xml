@@ -514,14 +514,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"전원 알림 컨트롤"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"사용"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"사용 안함"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"전원 알림 컨트롤을 사용하면 앱 알림 관련 중요도를 0부터 5까지로 설정할 수 있습니다. \n\n"<b>"레벨 5"</b>" \n- 알림 목록 상단에 표시 \n- 전체 화면일 경우 알림 표시 허용 \n- 항상 엿보기 표시 \n\n"<b>"레벨 4"</b>" \n- 전체 화면에 알림 표시 금지 \n- 항상 엿보기 표시 \n\n"<b>"레벨 3"</b>" \n- 전체 화면에 알림 표시 금지 \n- 엿보기 표시 안함 \n\n"<b>"레벨 2"</b>" \n- 전체 화면에 알림 표시 금지 \n- 엿보기 표시 안함 \n- 소리나 진동으로 알리지 않음 \n\n"<b>"레벨 1"</b>" \n- 전체 화면에 알림 표시 금지 \n- 엿보기 표시 안함 \n- 소리나 진동으로 알리지 않음 \n- 잠금 화면 및 상태 표시줄에서 숨김 \n- 알림 목록 하단에 표시 \n\n"<b>"레벨 0"</b>" \n- 앱의 모든 알림 차단"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"중요도: 자동"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"중요: 레벨 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"중요: 레벨 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"중요: 레벨 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"중요: 레벨 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"중요: 레벨 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"중요: 레벨 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"앱에서 각 알림의 중요도를 결정합니다."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"이 앱의 알림 표시 안함"</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"전체 화면일 때 알림, 엿보기, 소리, 진동을 금지합니다. 잠금 화면 및 상태 표시줄에서 숨깁니다."</string>

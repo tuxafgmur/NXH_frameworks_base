@@ -512,14 +512,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Prioritetsinställningar för aviseringar"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Av"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"På"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Med aviseringsinställningarna kan du ange prioritetsnivå från 0 till 5 för aviseringar från en app. \n\n"<b>"Nivå 5"</b>" \n– Visa högst upp i aviseringslistan\n– Tillåt avbrott i helskärmsläge \n– Snabbvisa alltid \n\n"<b>"Nivå 4"</b>" \n– Tillåt inte avbrott i helskärmsläge \n– Snabbvisa alltid \n\n"<b>"Nivå 3"</b>" \n- Tillåt inte avbrott i helskärmsläge \n– Snabbvisa aldrig \n\n"<b>"Nivå 2"</b>" \n– Tillåt inte avbrott i helskärmsläge \n– Snabbvisa aldrig \n– Aldrig med ljud eller vibration \n\n"<b>"Nivå 1"</b>" \n– Tillåt inte avbrott i helskärmsläge \n– Snabbvisa aldrig \n– Aldrig med ljud eller vibration \n– Visa inte på låsskärmen och i statusfältet \n– Visa längst ned i aviseringslistan \n\n"<b>"Nivå 0"</b>" \n– Blockera alla aviseringar från appen"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Prioritet: automatisk"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Prioritet: nivå 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"Prioritet: nivå 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"Prioritet: nivå 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Prioritet: nivå 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Prioritet: nivå 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Prioritet: nivå 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Appen fastställer prioritet för varje avisering."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Visa aldrig aviseringar från appen."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Inga avbrott, snabbvisningar, ljud eller vibrationer i helskärm. Dölj från låsskärm och statusfält."</string>

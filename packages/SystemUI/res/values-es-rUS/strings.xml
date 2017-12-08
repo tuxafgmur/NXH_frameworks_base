@@ -514,14 +514,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Controles de activación de notificaciones"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Activado"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Desactivado"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Con los controles de activación de notificaciones, puedes establecer un nivel de importancia para las notificaciones de una app. \n\n"<b>"Nivel 5"</b>" \n- Mostrar en la parte superior de la lista de notificaciones. \n- Permitir interrupción en la pantalla completa. \n- Mostrar siempre. \n\n"<b>"Nivel 4"</b>" \n- No permitir interrupción en la pantalla completa. \n- Mostrar siempre. \n\n"<b>"Nivel 3"</b>" \n- No permitir interrupción en la pantalla completa. \n- No mostrar. \n\n"<b>"Nivel 2"</b>" \n- No permitir interrupción en la pantalla completa. \n- No mostrar. \n- No sonar ni vibrar. \n\n"<b>"Nivel 1"</b>" \n- No permitir interrupción en la pantalla completa. \n- No mostrar. \n- No sonar ni vibrar. \n- Ocultar de la pantalla bloqueada y la barra de estado. \n- Mostrar al final de la lista de notificaciones. \n\n"<b>"Nivel 0"</b>" \n- Bloquear todas las notificaciones de la app."</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Importancia: Automática"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Importancia: Nivel 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"Importancia: Nivel 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"Importancia: Nivel 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Importancia: Nivel 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Importancia: Nivel 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Importancia: Nivel 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"La app determina la importancia de cada notificación."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"No mostrar notificaciones de esta app"</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"No interrumpir pantalla, mostrar, sonar ni vibrar. Ocultar de pantalla bloqueada y barra de estado."</string>

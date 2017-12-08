@@ -514,14 +514,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Bateria-mailaren arabera jakinarazpenak kontrolatzeko aukerak"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Aktibatuta"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Desaktibatuta"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Bateria-mailaren arabera jakinarazpenak kontrolatzeko aukerekin, 0 eta 5 bitarteko garrantzi-mailetan sailka ditzakezu aplikazioen jakinarazpenak. \n\n"<b>"5. maila"</b>" \n- Erakutsi jakinarazpenen zerrendaren goialdean. \n- Baimendu etetea pantaila osoko moduan zaudenean. \n- Agerrarazi beti jakinarazpenak. \n\n"<b>"4. maila"</b>" \n- Galarazi etetea pantaila osoko moduan zaudenean. \n- Agerrarazi beti jakinarazpenak. \n\n"<b>"3. maila"</b>" \n- Galarazi etetea pantaila osoko moduan zaudenean. \n- Ez agerrarazi jakinarazpenik inoiz. \n\n"<b>"2. maila"</b>" \n- Galarazi etetea pantaila osoko moduan zaudenean. \n- Ez agerrarazi jakinarazpenik inoiz. \n- Ez egin soinurik edo dardararik inoiz. \n\n"<b>"1. maila"</b>" \n- Galarazi etetea pantaila osoko moduan zaudenean. \n- Ez agerrarazi jakinarazpenik inoiz. \n- Ez egin soinurik edo dardararik inoiz. \n- Ezkutatu pantaila blokeatutik eta egoera-barratik. \n- Erakutsi jakinarazpenen zerrendaren behealdean. \n\n"<b>"0. maila"</b>" \n- Blokeatu aplikazioaren jakinarazpen guztiak."</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Garrantzia: automatikoa"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Garrantzia: 0. maila"</string>
-    <string name="min_importance" msgid="560779348928574878">"Garrantzia: 1. maila"</string>
-    <string name="low_importance" msgid="7571498511534140">"Garrantzia: 2. maila"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Garrantzia: 3. maila"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Garrantzia: 4. maila"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Garrantzia: 5. maila"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Aplikazioak zehazten du jakinarazpen bakoitzaren garrantzia."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Ez erakutsi inoiz aplikazio honen jakinarazpenak."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Ez eten, ez agerrarazi jakinarazpenik eta ez egin soinurik edo dardararik pantaila osoko modua aktibo dagoenean. Ezkutatu pantaila blokeatutik eta egoera-barratik."</string>

@@ -514,14 +514,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Napredne kontrole obavijesti"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Uključeno"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Isključeno"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Napredne kontrole obavijesti omogućuju vam da postavite razinu važnosti za obavijesti aplikacije od 0 do 5. \n\n"<b>"Razina 5"</b>" \n– prikaži na vrhu popisa obavijesti \n– dopusti prekide prikaza na cijelom zaslonu \n– uvijek dopusti brzi pregled \n\n"<b>"Razina 4"</b>" \n– onemogući prekid prikaza na cijelom zaslonu \n– uvijek dopusti brzi pregled \n\n"<b>"Razina 3"</b>" \n– onemogući prekid prikaza na cijelom zaslonu \n– nikad ne dopusti brzi pregled\n\n"<b>"Razina 2"</b>" \n– onemogući prekid prikaza na cijelom zaslonu \n– nikad ne dopusti brzi pregled \n– nikad ne emitiraj zvuk ni vibraciju \n\n"<b>"Razina 1"</b>" \n– onemogući prekid prikaza na cijelom zaslonu \n– nikad ne dopusti brzi pregled \n– nikad ne emitiraj zvuk ni vibraciju \n– ne prikazuj na zaključanom zaslonu i traci statusa \n– prikaži na dnu popisa obavijesti \n\n"<b>"Razina 0"</b>" \n– blokiraj sve obavijesti aplikacije"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Važnost: automatski"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Važnost: razina 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"Važnost: razina 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"Važnost: razina 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Važnost: razina 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Važnost: razina 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Važnost: razina 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Aplikacija određuje važnost za svaku obavijest."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Nikad ne prikazuj obavijesti te aplikacije."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Bez prekida prikaza na cijelom zaslonu, brzog pregleda, zvuka ili vibracije. Ne prikazuj na zaključanom zaslonu i traci statusa."</string>

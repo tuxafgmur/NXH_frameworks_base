@@ -512,14 +512,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Kontrollet e njoftimit të energjisë"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Aktiv"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Joaktiv"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Me kontrollet e njoftimit të energjisë, mund të caktosh një nivel rëndësie nga 0 në 5 për njoftimet e një aplikacioni. \n\n"<b>"Niveli 5"</b>" \n- Shfaq në krye të listës së njoftimeve \n- Lejo ndërprerjen e ekranit të plotë \n- Gjithmonë shfaq shpejt \n\n"<b>"Niveli 4"</b>" \n- Parandalo ndërprerjen e ekranit të plotë \n- Gijthmonë shfaq shpejt \n\n"<b>"Niveli 3"</b>" \n- Parandalo ndërprerjen e ekranit të plotë \n- Asnjëherë mos shfaq shpejt \n\n"<b>"Niveli 2"</b>" \n- Parandalo ndërprerjen e ekranit të plotë \n- Asnjëherë mos shfaq shpejt \n- Asnjëherë mos lësho tingull dhe dridhje \n\n"<b>"Niveli 1"</b>" \n- Parandalo ndërprerjen e ekranit të plotë \n- Asnjëherë mos shfaq shpejt \n- Asnjëherë mos lësho tingull ose dridhje \n- Fshih nga ekrani i kyçjes dhe shiriti i statusit \n- Shfaq në fund të listës së njoftimeve \n\n"<b>"Niveli 0"</b>" \n- Blloko të gjitha njoftimet nga aplikacioni"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Rëndësia: Automatike"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Rëndësia: Niveli 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"Rëndësia: Niveli 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"Rëndësia: Niveli 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Rëndësia: Niveli 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Rëndësia: Niveli 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Rëndësia: Niveli 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Aplikacioni përcakton rëndësinë për çdo njoftim."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Mos trego asnjëherë njoftime nga ky aplikacion."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Nuk ka ndërprerje të plotë të ekranit, shfaqje të shpejtë, tingull apo dridhje. Fshihe nga ekrani i kyçjes dhe shiriti i statusit."</string>

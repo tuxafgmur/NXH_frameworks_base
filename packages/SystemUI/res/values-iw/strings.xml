@@ -516,14 +516,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"פקדים של הודעות הפעלה"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"פועל"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"כבוי"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"בעזרת פקדים של הודעות הפעלה, תוכל להגדיר רמת חשיבות מ-0 עד 5 להודעות אפליקציה. \n\n"<b>"רמה 5"</b>" \n- הצג בראש רשימת ההודעות \n- אפשר הפרעה במסך מלא \n- תמיד אפשר הצצה \n\n"<b>"רמה 4"</b>" \n- מנע הפרעה במסך מלא \n- תמיד אפשר הצצה \n\n"<b>"רמה 3"</b>" \n- מנע הפרעה במסך מלא \n- אף פעם אל תאפשר הצצה \n\n"<b>"רמה 2"</b>" \n- מנע הפרעה במסך מלא \n- אף פעם אל תאפשר הצצה \n- אף פעם אל תאפשר קול ורטט \n\n"<b>"רמה 1"</b>" \n- מנע הפרעה במסך מלא \n- אף פעם אל תאפשר הצצה \n- אף פעם אל תאפשר קול ורטט \n- הסתר ממסך הנעילה ומשורת הסטטוס \n- הצג בתחתית רשימת ההודעות \n\n"<b>"רמה 0"</b>" \n- חסום את כל ההודעות מהאפליקציה"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"חשיבות: אוטומטית"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"חשיבות: רמה 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"חשיבות: רמה 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"חשיבות: רמה 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"חשיבות: רמה 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"חשיבות: רמה 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"חשיבות: רמה 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"האפליקציה קובעת חשיבות לכל הודעה."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"לעולם אל תציג הודעות מהאפליקציה הזו."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"ללא הפרעה, הצצה, קול או רטט במסך מלא. הסתר ממסך הנעילה ומשורת הסטטוס."</string>

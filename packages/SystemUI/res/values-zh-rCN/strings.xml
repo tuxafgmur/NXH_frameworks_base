@@ -512,14 +512,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"高级通知设置"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"开启"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"关闭"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"利用高级通知设置，您可以为应用通知设置从 0 级到 5 级的重要程度等级。\n\n"<b>"5 级"</b>" \n- 在通知列表顶部显示 \n- 允许全屏打扰 \n- 一律短暂显示通知 \n\n"<b>"4 级"</b>" \n- 禁止全屏打扰 \n- 一律短暂显示通知 \n\n"<b>"3 级"</b>" \n- 禁止全屏打扰 \n- 一律不短暂显示通知 \n\n"<b>"2 级"</b>" \n- 禁止全屏打扰 \n- 一律不短暂显示通知 \n- 一律不发出声音或振动 \n\n"<b>"1 级"</b>" \n- 禁止全屏打扰 \n- 一律不短暂显示通知 \n- 一律不发出声音或振动 \n- 不在锁定屏幕和状态栏中显示 \n- 在通知列表底部显示 \n\n"<b>"0 级"</b>" \n- 屏蔽应用的所有通知"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"重要程度：自动"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"重要程度：0 级"</string>
-    <string name="min_importance" msgid="560779348928574878">"重要程度：1 级"</string>
-    <string name="low_importance" msgid="7571498511534140">"重要程度：2 级"</string>
-    <string name="default_importance" msgid="7609889614553354702">"重要程度：3 级"</string>
-    <string name="high_importance" msgid="3441537905162782568">"重要程度：4 级"</string>
-    <string name="max_importance" msgid="4880179829869865275">"重要程度：5 级"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"应用会自行确定每条通知的重要程度。"</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"一律不显示来自此应用的通知。"</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"禁止全屏打扰、禁止短暂显示通知、禁止发出声音或振动；不在锁定屏幕和状态栏中显示。"</string>

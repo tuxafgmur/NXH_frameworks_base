@@ -514,14 +514,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Bildirishnomalar uchun kengaytirilgan boshqaruv"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Yoniq"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"O‘chiq"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Bildirishnomalar uchun kengaytirilgan boshqaruv yordamida ilova bildirishnomalarining muhimlik darajasini (0-5) sozlash mumkin. \n\n"<b>"5-daraja"</b>" \n- Bildirishnomani ro‘yxatning boshida ko‘rsatish \n- To‘liq ekranli bildirishnomalarni ko‘rsatish \n- Qalqib chiquvchi bildirishnomalarni ko‘rsatish \n\n"<b>"4-daraja"</b>" \n- To‘liq ekranli bildirishnomalarni ko‘rsatmaslik \n- Qalqib chiquvchi bildirishnomalarni ko‘rsatish \n\n"<b>"3-daraja"</b>" \n- To‘liq ekranli bildirishnomalarni ko‘rsatmaslik \n- Qalqib chiquvchi bildirishnomalarni ko‘rsatmaslik \n\n"<b>"2-daraja"</b>" \n- To‘liq ekranli bildirishnomalarni ko‘rsatmaslik \n- Qalqib chiquvchi bildirishnomalarni ko‘rsatmaslik \n- Ovoz va tebranishdan foydalanmaslik \n\n"<b>"1-daraja"</b>" \n- To‘liq ekranli bildirishnomalarni ko‘rsatmaslik \n- Qalqib chiquvchi bildirishnomalarni ko‘rsatmaslik \n- Ovoz va tebranishdan foydalanmaslik \n- Ekran qulfi va holat qatorida ko‘rsatmaslik \n- Bildirishnomani ro‘yxatning oxirida ko‘rsatish \n\n"<b>"0-daraja"</b>" \n- Ilovadan keladigan barcha bildirishnomalarni bloklash"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Muhimligi: avtomatik"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Muhimligi: 0-daraja"</string>
-    <string name="min_importance" msgid="560779348928574878">"Muhimligi: 1-daraja"</string>
-    <string name="low_importance" msgid="7571498511534140">"Muhimligi: 2-daraja"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Muhimligi: 3-daraja"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Muhimligi: 4-daraja"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Muhimligi: 5-daraja"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Ilova har bir bildirishnomaning muhimligini o‘zi aniqlaydi."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Bu ilovadan keladigan bildirishnomalarni hech qachon ko‘rsatilmaslik."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Qalqib chiquvchi va to‘liq ekranli bildirishnomalarni ko‘rsatilmaslik. Ovoz va tebranishdan foydalanmaslik. Ekran qulfi va holat qatorida ko‘rsatmaslik."</string>

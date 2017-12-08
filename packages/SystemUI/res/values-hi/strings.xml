@@ -512,14 +512,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"पावर नोटिफ़िकेशन नियंत्रण"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"चालू"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"बंद"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"पावर नोटिफ़िकेशन नियंत्रण के द्वारा, आप किसी ऐप्लिकेशन के नोटिफ़िकेशन के लिए 0 से 5 तक महत्व का लेवल सेट कर सकते हैं. \n\n"<b>"लेवल 5"</b>" \n- नोटिफ़िकेशन सूची के शीर्ष पर दिखाएं \n- पूर्ण स्क्रीन बाधा की अनुमति दें \n- हमेशा तांक-झांक करें \n\n"<b>"लेवल 4"</b>" \n- पूर्ण स्क्रीन बाधा को रोकें \n- हमेशा तांक-झांक करें \n\n"<b>"लेवल 3"</b>" \n- पूर्ण स्क्रीन बाधा को रोकें \n- कभी भी तांक-झांक ना करें \n\n"<b>"लेवल 2"</b>" \n- पूर्ण स्क्रीन बाधा को रोकें \n- कभी भी तांक-झांक ना करें \n- कभी भी ध्वनि या कंपन ना करें \n\n"<b>"लेवल 1"</b>" \n- पूर्ण स्क्रीन बाधा को रोकें \n- कभी भी तांक-झांक ना करें \n- कभी भी ध्वनि या कंपन ना करें \n- लॉक स्क्रीन और स्थिति बार से छिपाएं \n- नोटिफ़िकेशन सूची के नीचे दिखाएं \n\n"<b>"लेवल 0"</b>" \n- ऐप्लिकेशन के सभी नोटिफ़िकेशन अवरुद्ध कर दें"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"महत्व: स्वचालित"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"महत्व: लेवल 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"महत्व: लेवल 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"महत्व: लेवल 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"महत्व: लेवल 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"महत्व: लेवल 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"महत्व: लेवल 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"ऐप्लिकेशन प्रत्येक नोटिफ़िकेशन का महत्व निर्धारित करता है."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"इस ऐप्लिकेशन के नोटिफ़िकेशन कभी ना दिखाएं."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"कोई पूर्ण स्क्रीन बाधा, तांक-झांक, ध्वनि या कंपन नहीं है. लॉक स्क्रीन और स्थिति बार से छिपाएं."</string>

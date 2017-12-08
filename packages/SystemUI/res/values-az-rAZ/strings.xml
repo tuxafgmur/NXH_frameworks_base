@@ -512,14 +512,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Enerji bildiriş nəzarəti"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Aktiv"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Deaktiv"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Enerji bildiriş nəzarəti ilə, tətbiq bildirişləri üçün əhəmiyyət səviyyəsini 0-dan 5-ə kimi ayarlaya bilərsiniz. \n\n"<b>"Səviyyə 5"</b>" \n- Bildiriş siyahısının yuxarı hissəsində göstərin \n- Tam ekran kəsintisinə icazə verin \n- Hər zaman izləyin \n\n"<b>"Səviyyə 4"</b>" \n- Tam ekran kəsintisinin qarşısını alın \n- Hər zaman izləyin \n\n"<b>"Level 3"</b>" \n- Tam ekran kəsintisinin qarşısını alın \n- Heç vaxt izləməyin \n\n"<b>"Level 2"</b>" \n- Tam ekran kəsintisinin qarşısını alın \n- Heç vaxt izləməyin \n- Heç vaxt səsliyə və ya vibrasiyaya qoymayın \n\n"<b>"Səviyyə 1"</b>" \n- Prevent full screen interruption \n- Heç vaxt izləməyin \n- Heç vaxt səsliyə və ya vibrasiyaya qoymayın \n- Ekran kilidi və ya status panelindən gizlədin \n- Bildiriş siyahısının yuxarı hissəsində göstərin \n\n"<b>"Səviyyə 0"</b>" \n- Bütün bildirişləri tətbiqdən blok edin"</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Əhəmiyyət: Avtomatik"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Əhəmiyyət: Səviyyə 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"Əhəmiyyət: Səviyyə 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"Əhəmiyyət: Səviyyə 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Əhəmiyyət: Səviyyə 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Əhəmiyyət: Səviyyə 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Əhəmiyyət: Səviyyə 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"Hər bir bildirişin əhəmiyyətinə tətbiq özü qərar verir."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Bu tətbiqdən olan bildirişləri heç vaxt göstərməyin."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Tam ekran kəsintisi, baxışı, səsi və ya vibrasiyası yoxdur. Ekran kilidi və status panelindən gizlədin."</string>

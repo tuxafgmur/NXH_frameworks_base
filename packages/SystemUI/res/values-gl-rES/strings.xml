@@ -514,14 +514,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Controis de notificacións mellorados"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Activar"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Desactivar"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Cos controis de notificacións mellorados, podes asignarlles un nivel de importancia comprendido entre 0 e 5 ás notificacións dunha aplicación determinada. \n\n"<b>"Nivel 5"</b>" \n- Mostrar na parte superior da lista de notificacións. \n- Permitir interrupcións no modo de pantalla completa. \n- Mostrar sempre. \n\n"<b>"Nivel 4"</b>" \n- Impedir interrupcións no modo de pantalla completa. \n- Mostrar sempre. \n\n"<b>"Nivel 3"</b>" \n- Impedir interrupcións no modo de pantalla completa. \n- Non mostrar nunca. \n\n"<b>"Nivel 2"</b>" \n- Impedir interrupcións no modo de pantalla completa. \n- Non mostrar nunca. \n- Non soar nin vibrar nunca. \n\n"<b>"Nivel 1"</b>" \n- Impedir interrupcións no modo de pantalla completa. \n- Non mostrar nunca. \n- Non soar nin vibrar nunca. \n- Ocultar na pantalla de bloqueo e na barra de estado. \n- Mostrar na parte inferior da lista de notificacións. \n\n"<b>"Nivel 0"</b>" \n- Bloquear todas as notificacións da aplicación."</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Importancia: automática"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Importancia: nivel 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"Importancia: nivel 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"Importancia: nivel 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Importancia: nivel 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Importancia: nivel 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Importancia: nivel 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"A aplicación determina a importancia de cada notificación."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Non mostrar nunca as notificacións desta aplicación."</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Sen notif. e sen son, vibrac. ou inter. en pant. completa. Ocultar na pant. bloqueo e barra estado."</string>

@@ -512,14 +512,7 @@
     <string name="tuner_full_importance_settings" msgid="3207312268609236827">"Kontrolelementer til underretning om strøm"</string>
     <string name="tuner_full_importance_settings_on" msgid="7545060756610299966">"Til"</string>
     <string name="tuner_full_importance_settings_off" msgid="8208165412614935229">"Fra"</string>
-    <string name="power_notification_controls_description" msgid="4372459941671353358">"Med kontrolelementer til underretninger om strøm kan du konfigurere et vigtighedsniveau fra 0 til 5 for en apps underretninger. \n\n"<b>"Niveau 5"</b>\n"- Vis øverst på listen over underretninger \n- Tillad afbrydelse af fuld skærm \n- Se altid smugkig \n\n"<b>"Niveau 4"</b>\n"- Ingen afbrydelse af fuld skærm \n- Se altid smugkig \n\n"<b>"Niveau 3"</b>\n"- Ingen afbrydelse af fuld skærm \n- Se aldrig smugkig \n\n"<b>"Niveau 2"</b>\n"- Ingen afbrydelse af fuld skærm \n Se aldrig smugkig \n- Ingen lyd og vibration \n\n"<b>"Niveau 1"</b>\n"- Ingen afbrydelse af fuld skærm \n- Se aldrig smugkig \n- Ingen lyd eller vibration \n- Skjul fra låseskærm og statusbjælke \n- Vis nederst på listen over underretninger \n\n"<b>"Niveau 0"</b>\n"- Bloker alle underretninger fra appen."</string>
     <string name="user_unspecified_importance" msgid="361613856933432117">"Vigtighed: Automatisk"</string>
-    <string name="blocked_importance" msgid="5035073235408414397">"Vigtighed: Niveau 0"</string>
-    <string name="min_importance" msgid="560779348928574878">"Vigtighed: Niveau 1"</string>
-    <string name="low_importance" msgid="7571498511534140">"Vigtighed: Niveau 2"</string>
-    <string name="default_importance" msgid="7609889614553354702">"Vigtighed: Niveau 3"</string>
-    <string name="high_importance" msgid="3441537905162782568">"Vigtighed: Niveau 4"</string>
-    <string name="max_importance" msgid="4880179829869865275">"Vigtighed: Niveau 5"</string>
     <string name="notification_importance_user_unspecified" msgid="2868359605125272874">"App bestemmer vigtigheden af hver underretning."</string>
     <string name="notification_importance_blocked" msgid="4237497046867398057">"Vis aldrig underretninger fra denne app"</string>
     <string name="notification_importance_min" msgid="7844224511187027155">"Ingen smugkig, lyd, vibration eller afbrydelse af fuld skærm. Skjul fra låseskærm og statusbjælke."</string>
