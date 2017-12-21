@@ -1633,11 +1633,8 @@ public final class ActivityManagerService extends ActivityManagerNative
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
-                case KILL_PROCESS_GROUP_MSG:
-                {
-                    Trace.traceBegin(Trace.TRACE_TAG_ACTIVITY_MANAGER, "killProcessGroup");
+                case KILL_PROCESS_GROUP_MSG: {
                     Process.killProcessGroup(msg.arg1 /* uid */, msg.arg2 /* pid */);
-                    Trace.traceEnd(Trace.TRACE_TAG_ACTIVITY_MANAGER);
                 }
                 break;
 
@@ -2131,9 +2128,7 @@ public final class ActivityManagerService extends ActivityManagerNative
             }
             case FINISH_BOOTING_MSG: {
                 if (msg.arg1 != 0) {
-                    Trace.traceBegin(Trace.TRACE_TAG_ACTIVITY_MANAGER, "FinishBooting");
                     finishBooting();
-                    Trace.traceEnd(Trace.TRACE_TAG_ACTIVITY_MANAGER);
                 }
                 if (msg.arg2 != 0) {
                     enableScreenAfterBoot();
@@ -3996,13 +3991,10 @@ public final class ActivityManagerService extends ActivityManagerNative
             // the PID of the new process, or else throw a RuntimeException.
             boolean isActivityProcess = (entryPoint == null);
             if (entryPoint == null) entryPoint = "android.app.ActivityThread";
-            Trace.traceBegin(Trace.TRACE_TAG_ACTIVITY_MANAGER, "Start proc: " +
-                    app.processName);
             Process.ProcessStartResult startResult = Process.start(entryPoint,
                     app.processName, uid, uid, gids, debugFlags, mountExternal,
                     app.info.targetSdkVersion, app.info.seinfo, requiredAbi, instructionSet,
                     app.info.dataDir, refreshTheme, entryPointArgs);
-            Trace.traceEnd(Trace.TRACE_TAG_ACTIVITY_MANAGER);
 
             mBatteryStatsService.noteProcessStart(app.processName, app.info.uid);
 
@@ -5594,7 +5586,7 @@ public final class ActivityManagerService extends ActivityManagerNative
         if (true || IS_USER_BUILD) {
             return;
         }
-        String tracesPath = SystemProperties.get("dalvik.vm.stack-trace-file", null);
+        String tracesPath = null;
         if (tracesPath == null || tracesPath.length() == 0) {
             return;
         }
@@ -5633,7 +5625,6 @@ public final class ActivityManagerService extends ActivityManagerNative
             if (app != null) {
                 ArrayList<Integer> firstPids = new ArrayList<Integer>();
                 firstPids.add(app.pid);
-                dumpStackTraces(tracesPath, firstPids, null, null, null);
             }
 
             File lastTracesFile = null;
@@ -7105,9 +7096,7 @@ public final class ActivityManagerService extends ActivityManagerNative
             mBootAnimationComplete = true;
         }
         if (callFinishBooting) {
-            Trace.traceBegin(Trace.TRACE_TAG_ACTIVITY_MANAGER, "FinishBooting");
             finishBooting();
-            Trace.traceEnd(Trace.TRACE_TAG_ACTIVITY_MANAGER);
         }
     }
 
@@ -7122,9 +7111,7 @@ public final class ActivityManagerService extends ActivityManagerNative
         }
 
         if (booting) {
-            Trace.traceBegin(Trace.TRACE_TAG_ACTIVITY_MANAGER, "FinishBooting");
             finishBooting();
-            Trace.traceEnd(Trace.TRACE_TAG_ACTIVITY_MANAGER);
         }
 
         if (enableScreen) {
@@ -13799,8 +13786,7 @@ public final class ActivityManagerService extends ActivityManagerNative
                                        ApplicationInfo.FLAG_UPDATED_SYSTEM_APP)) != 0;
         final String processName = process == null ? "unknown" : process.processName;
         final String dropboxTag = isSystemApp ? "system_app_strictmode" : "data_app_strictmode";
-        final DropBoxManager dbox = (DropBoxManager)
-                mContext.getSystemService(Context.DROPBOX_SERVICE);
+        final DropBoxManager dbox = null; 
 
         // Exit early if the dropbox isn't configured to accept this report type.
         if (dbox == null || !dbox.isTagEnabled(dropboxTag)) return;
@@ -22268,15 +22254,11 @@ public final class ActivityManagerService extends ActivityManagerNative
                     throw new IllegalArgumentException("null fd");
                 }
 
-                PrintWriter pw = new FastPrintWriter(new FileOutputStream(fd.getFileDescriptor()));
-                pw.println("Binder transaction traces for all processes.\n");
                 for (ProcessRecord process : mLruProcesses) {
                     if (!processSanityChecksLocked(process)) {
                         continue;
                     }
 
-                    pw.println("Traces for process: " + process.processName);
-                    pw.flush();
                     try {
                         TransferPipe tp = new TransferPipe();
                         try {
@@ -22287,13 +22269,7 @@ public final class ActivityManagerService extends ActivityManagerNative
                             tp.kill();
                         }
                     } catch (IOException e) {
-                        pw.println("Failure while dumping IPC traces from " + process +
-                                ".  Exception: " + e);
-                        pw.flush();
                     } catch (RemoteException e) {
-                        pw.println("Got a RemoteException while dumping IPC traces from " +
-                                process + ".  Exception: " + e);
-                        pw.flush();
                     }
                 }
                 fd = null;

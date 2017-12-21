@@ -284,9 +284,6 @@ class AppErrors {
         }
 
         if (proc == null) {
-            Slog.w(TAG, "crashApplication: nothing for uid=" + uid
-                    + " initialPid=" + initialPid
-                    + " packageName=" + packageName);
             return;
         }
 
@@ -456,11 +453,7 @@ class AppErrors {
                     shortMsg, longMsg, timeMillis, crashInfo.stackTrace)) {
                 if ("1".equals(SystemProperties.get(SYSTEM_DEBUGGABLE, "0"))
                         && "Native crash".equals(crashInfo.exceptionClassName)) {
-                    Slog.w(TAG, "Skip killing native crashed app " + name
-                            + "(" + pid + ") during testing");
                 } else {
-                    Slog.w(TAG, "Force-killing crashed app " + name
-                            + " at watcher's request");
                     if (r != null) {
                         if (!makeAppCrashingLocked(r, shortMsg, longMsg, stackTrace, null))
                         {
@@ -597,8 +590,6 @@ class AppErrors {
         }
         if (crashTime != null && now < crashTime+ProcessList.MIN_CRASH_INTERVAL) {
             // This process loses!
-            Slog.w(TAG, "Process " + app.info.processName
-                    + " has crashed too many times: killing!");
             EventLog.writeEvent(EventLogTags.AM_PROCESS_CRASHED_TOO_MUCH,
                     app.userId, app.info.processName, app.uid);
             mService.mStackSupervisor.handleAppCrashLocked(app);
@@ -667,7 +658,6 @@ class AppErrors {
             for (int activityNdx = activities.size() - 1; activityNdx >= 0; --activityNdx) {
                 final ActivityRecord r = activities.get(activityNdx);
                 if (r.isHomeActivity()) {
-                    Log.i(TAG, "Clearing package preferred activities from " + r.packageName);
                     try {
                         ActivityThread.getPackageManager()
                                 .clearPackagePreferredActivities(r.packageName);
@@ -697,7 +687,6 @@ class AppErrors {
             ProcessRecord proc = data.proc;
             AppErrorResult res = data.result;
             if (proc != null && proc.crashDialog != null) {
-                Slog.e(TAG, "App already has crash dialog: " + proc);
                 if (res != null) {
                     res.set(AppErrorDialog.ALREADY_SHOWING);
                 }
@@ -710,7 +699,6 @@ class AppErrors {
                 isBackground &= (proc.userId != userId);
             }
             if (isBackground && !showBackground) {
-                Slog.w(TAG, "Skipping crash dialog of " + proc + ": background");
                 if (res != null) {
                     res.set(AppErrorDialog.BACKGROUND_USER);
                 }
@@ -774,19 +762,14 @@ class AppErrors {
         synchronized (mService) {
             // PowerManager.reboot() can block for a long time, so ignore ANRs while shutting down.
             if (mService.mShuttingDown) {
-                Slog.i(TAG, "During shutdown skipping ANR: " + app + " " + annotation);
                 return;
             } else if (app.notResponding) {
-                Slog.i(TAG, "Skipping duplicate ANR: " + app + " " + annotation);
                 return;
             } else if (app.crashing) {
-                Slog.i(TAG, "Crashing app skipping ANR: " + app + " " + annotation);
                 return;
             } else if (app.killedByAm) {
-                Slog.i(TAG, "App already killed by AM skipping ANR: " + app + " " + annotation);
                 return;
             } else if (app.killed) {
-                Slog.i(TAG, "Skipping died app ANR: " + app + " " + annotation);
                 return;
             }
 
@@ -963,7 +946,6 @@ class AppErrors {
             HashMap<String, Object> data = (HashMap<String, Object>) msg.obj;
             ProcessRecord proc = (ProcessRecord)data.get("app");
             if (proc != null && proc.anrDialog != null) {
-                Slog.e(TAG, "App already has anr dialog: " + proc);
                 MetricsLogger.action(mContext, MetricsProto.MetricsEvent.ACTION_APP_ANR,
                         AppNotRespondingDialog.ALREADY_SHOWING);
                 return;
