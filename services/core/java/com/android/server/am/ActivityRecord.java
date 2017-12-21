@@ -94,7 +94,7 @@ final class ActivityRecord {
     private static final String TAG_SWITCH = TAG + POSTFIX_SWITCH;
     private static final String TAG_THUMBNAILS = TAG + POSTFIX_THUMBNAILS;
 
-    private static final boolean SHOW_ACTIVITY_START_TIME = true;
+    private static final boolean SHOW_ACTIVITY_START_TIME = false;
     final public static String RECENTS_PACKAGE_NAME = "com.android.systemui.recents";
 
     private static final String ATTR_ID = "id";
