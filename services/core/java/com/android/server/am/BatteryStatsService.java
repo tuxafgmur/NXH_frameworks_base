@@ -237,8 +237,6 @@ public final class BatteryStatsService extends IBatteryStats.Stub
     }
 
     public void shutdown() {
-        Slog.w("BatteryStats", "Writing battery stats before shutdown...");
-
         updateExternalStatsSync("shutdown", BatteryStatsImpl.ExternalStatsSync.UPDATE_ALL);
         synchronized (mStats) {
             mStats.shutdownLocked();
@@ -339,8 +337,6 @@ public final class BatteryStatsService extends IBatteryStats.Stub
     public byte[] getStatistics() {
         mContext.enforceCallingPermission(
                 android.Manifest.permission.BATTERY_STATS, null);
-        //Slog.i("foo", "SENDING BATTERY INFO:");
-        //mStats.dumpLocked(new LogPrinter(Log.INFO, "foo", Log.LOG_ID_SYSTEM));
         Parcel out = Parcel.obtain();
         updateExternalStatsSync("get-stats", BatteryStatsImpl.ExternalStatsSync.UPDATE_ALL);
         synchronized (mStats) {
@@ -354,8 +350,6 @@ public final class BatteryStatsService extends IBatteryStats.Stub
     public ParcelFileDescriptor getStatisticsStream() {
         mContext.enforceCallingPermission(
                 android.Manifest.permission.BATTERY_STATS, null);
-        //Slog.i("foo", "SENDING BATTERY INFO:");
-        //mStats.dumpLocked(new LogPrinter(Log.INFO, "foo", Log.LOG_ID_SYSTEM));
         Parcel out = Parcel.obtain();
         updateExternalStatsSync("get-stats", BatteryStatsImpl.ExternalStatsSync.UPDATE_ALL);
         synchronized (mStats) {
@@ -957,7 +951,6 @@ public final class BatteryStatsService extends IBatteryStats.Stub
         enforceCallingPermission();
 
         if (info == null || !info.isValid()) {
-            Slog.e(TAG, "invalid wifi data given: " + info);
             return;
         }
 
@@ -970,7 +963,6 @@ public final class BatteryStatsService extends IBatteryStats.Stub
     public void noteBluetoothControllerActivity(BluetoothActivityEnergyInfo info) {
         enforceCallingPermission();
         if (info == null || !info.isValid()) {
-            Slog.e(TAG, "invalid bluetooth data given: " + info);
             return;
         }
 
@@ -984,7 +976,6 @@ public final class BatteryStatsService extends IBatteryStats.Stub
         enforceCallingPermission();
 
         if (info == null || !info.isValid()) {
-            Slog.e(TAG, "invalid modem data given: " + info);
             return;
         }
 
@@ -1359,37 +1350,12 @@ public final class BatteryStatsService extends IBatteryStats.Stub
             delta.mControllerRxTimeMs = latest.mControllerRxTimeMs;
             delta.mControllerTxTimeMs = latest.mControllerTxTimeMs;
             delta.mControllerIdleTimeMs = latest.mControllerIdleTimeMs;
-            Slog.v(TAG, "WiFi energy data was reset, new WiFi energy data is " + delta);
         } else {
             final long totalActiveTimeMs = txTimeMs + rxTimeMs;
             long maxExpectedIdleTimeMs;
             if (totalActiveTimeMs > timePeriodMs) {
                 // Cap the max idle time at zero since the active time consumed the whole time
                 maxExpectedIdleTimeMs = 0;
-                if (totalActiveTimeMs > timePeriodMs + MAX_WIFI_STATS_SAMPLE_ERROR_MILLIS) {
-                    StringBuilder sb = new StringBuilder();
-                    sb.append("Total Active time ");
-                    TimeUtils.formatDuration(totalActiveTimeMs, sb);
-                    sb.append(" is longer than sample period ");
-                    TimeUtils.formatDuration(timePeriodMs, sb);
-                    sb.append(".\n");
-                    sb.append("Previous WiFi snapshot: ").append("idle=");
-                    TimeUtils.formatDuration(lastIdleMs, sb);
-                    sb.append(" rx=");
-                    TimeUtils.formatDuration(lastRxMs, sb);
-                    sb.append(" tx=");
-                    TimeUtils.formatDuration(lastTxMs, sb);
-                    sb.append(" e=").append(lastEnergy);
-                    sb.append("\n");
-                    sb.append("Current WiFi snapshot: ").append("idle=");
-                    TimeUtils.formatDuration(latest.mControllerIdleTimeMs, sb);
-                    sb.append(" rx=");
-                    TimeUtils.formatDuration(latest.mControllerRxTimeMs, sb);
-                    sb.append(" tx=");
-                    TimeUtils.formatDuration(latest.mControllerTxTimeMs, sb);
-                    sb.append(" e=").append(latest.mControllerEnergyUsed);
-                    Slog.wtf(TAG, sb.toString());
-                }
             } else {
                 maxExpectedIdleTimeMs = timePeriodMs - totalActiveTimeMs;
             }
@@ -1528,16 +1494,12 @@ public final class BatteryStatsService extends IBatteryStats.Stub
                 if (wifiInfo != null) {
                     if (wifiInfo.isValid()) {
                         mStats.updateWifiStateLocked(extractDelta(wifiInfo));
-                    } else {
-                        Slog.e(TAG, "wifi info is invalid: " + wifiInfo);
                     }
                 }
 
                 if (bluetoothInfo != null) {
                     if (bluetoothInfo.isValid()) {
                         mStats.updateBluetoothStateLocked(bluetoothInfo);
-                    } else {
-                        Slog.e(TAG, "bluetooth info is invalid: " + bluetoothInfo);
                     }
                 }
 
@@ -1545,8 +1507,6 @@ public final class BatteryStatsService extends IBatteryStats.Stub
                     if (modemInfo.isValid()) {
                         mStats.updateMobileRadioStateLocked(SystemClock.elapsedRealtime(),
                                 modemInfo);
-                    } else {
-                        Slog.e(TAG, "modem info is invalid: " + modemInfo);
                     }
                 }
             }

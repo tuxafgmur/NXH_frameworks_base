@@ -227,7 +227,6 @@ public final class ActiveServices {
             for (int i=0, N=mStartingBackground.size(); i<N; i++) {
                 ServiceRecord r = mStartingBackground.get(i);
                 if (r.startingBgTimeout <= now) {
-                    Slog.i(TAG, "Waited long enough for: " + r);
                     mStartingBackground.remove(i);
                     N--;
                     i--;
@@ -238,10 +237,6 @@ public final class ActiveServices {
                 ServiceRecord r = mDelayedStartList.remove(0);
                 if (DEBUG_DELAYED_STARTS) Slog.v(TAG_SERVICE,
                         "REM FR DELAY LIST (exec next): " + r);
-                if (r.pendingStarts.size() <= 0) {
-                    Slog.w(TAG, "**** NO PENDING STARTS! " + r + " startReq=" + r.startRequested
-                            + " delayedStop=" + r.delayedStop);
-                }
                 if (DEBUG_DELAYED_SERVICE) {
                     if (mDelayedStartList.size() > 0) {
                         Slog.v(TAG_SERVICE, "Remaining delayed list:");
@@ -342,7 +337,6 @@ public final class ActiveServices {
         ServiceRecord r = res.record;
 
         if (!mAm.mUserController.exists(r.userId)) {
-            Slog.w(TAG, "Trying to start service with non-existent user! " + r.userId);
             return null;
         }
 
@@ -354,10 +348,6 @@ public final class ActiveServices {
                 final int allowed = mAm.checkAllowBackgroundLocked(
                         r.appInfo.uid, r.packageName, callingPid, true);
                 if (allowed != ActivityManager.APP_START_MODE_NORMAL) {
-                    Slog.w(TAG, "Background start not allowed: service "
-                            + service + " to " + r.name.flattenToShortString()
-                            + " from pid=" + callingPid + " uid=" + callingUid
-                            + " pkg=" + callingPackage);
                     return null;
                 }
             } finally {
@@ -464,8 +454,6 @@ public final class ActiveServices {
 
             // Show a permission review UI only for starting from a foreground app
             if (!callerFg) {
-                Slog.w(TAG, "u" + r.userId + " Starting a service in package"
-                        + r.packageName + " requires a permissions review");
                 return false;
             }
 
@@ -667,11 +655,6 @@ public final class ActiveServices {
                     return false;
                 }
 
-                if (r.deliveredStarts.size() > 0) {
-                    Slog.w(TAG, "stopServiceToken startId " + startId
-                            + " is last, but have " + r.deliveredStarts.size()
-                            + " remaining args");
-                }
             }
 
             synchronized (r.stats.getBatteryStats()) {
@@ -859,7 +842,6 @@ public final class ActiveServices {
         if (token != null) {
             activity = ActivityRecord.isInStackLocked(token);
             if (activity == null) {
-                Slog.w(TAG, "Binding with unknown activity: " + token);
                 return 0;
             }
         }
@@ -924,8 +906,6 @@ public final class ActiveServices {
 
                 // Show a permission review UI only for binding from a foreground app
                 if (!callerFg) {
-                    Slog.w(TAG, "u" + s.userId + " Binding to a service in package"
-                            + s.packageName + " requires a permissions review");
                     return 0;
                 }
 
@@ -1155,8 +1135,6 @@ public final class ActiveServices {
         if (DEBUG_SERVICE) Slog.v(TAG_SERVICE, "unbindService: conn=" + binder);
         ArrayList<ConnectionRecord> clist = mServiceConnections.get(binder);
         if (clist == null) {
-            Slog.w(TAG, "Unbind failed: could not find connection for "
-                  + connection.asBinder());
             return false;
         }
 
@@ -1167,7 +1145,6 @@ public final class ActiveServices {
                 removeConnectionLocked(r, null, null);
                 if (clist.size() > 0 && clist.get(0) == r) {
                     // In case it didn't get removed above, do it now.
-                    Slog.wtf(TAG, "Connection " + r + " not removed for binder " + binder);
                     clist.remove(0);
                 }
 
@@ -1301,8 +1278,6 @@ public final class ActiveServices {
                 ServiceInfo sInfo =
                     rInfo != null ? rInfo.serviceInfo : null;
                 if (sInfo == null) {
-                    Slog.w(TAG_SERVICE, "Unable to start service " + service + " U=" + userId +
-                          ": not found");
                     return null;
                 }
                 ComponentName name = new ComponentName(
@@ -1483,16 +1458,12 @@ public final class ActiveServices {
         boolean canceled = false;
 
         if (mAm.isShuttingDownLocked()) {
-            Slog.w(TAG, "Not scheduling restart of crashed service " + r.shortName
-                    + " - system is shutting down");
             return false;
         }
 
         ServiceMap smap = getServiceMap(r.userId);
         if (smap.mServicesByName.get(r.name) != r) {
             ServiceRecord cur = smap.mServicesByName.get(r.name);
-            Slog.wtf(TAG, "Attempting to schedule restart of " + r
-                    + " when found in map: " + cur);
             return false;
         }
 
@@ -1528,8 +1499,6 @@ public final class ActiveServices {
                         if (minDuration < dur) minDuration = dur;
                         if (resetTime < dur) resetTime = dur;
                     } else {
-                        Slog.w(TAG, "Canceling start item " + si.intent + " in service "
-                                + r.name);
                         canceled = true;
                     }
                 }
@@ -1613,8 +1582,6 @@ public final class ActiveServices {
         mAm.mHandler.removeCallbacks(r.restarter);
         mAm.mHandler.postAtTime(r.restarter, r.nextRestartTime);
         r.nextRestartTime = SystemClock.uptimeMillis() + r.restartDelay;
-        Slog.w(TAG, "Scheduling restart of crashed service "
-                + r.shortName + " in " + r.restartDelay + "ms");
 
         if (SERVICE_RESCHEDULE && DEBUG_DELAYED_SERVICE) {
             for (int i=mRestartingServices.size()-1; i>=0; i--) {
@@ -1640,7 +1607,6 @@ public final class ActiveServices {
             // have been bugs where this happens, and bad things happen because the process
             // ends up just being cached, so quickly killed, then restarted again and again.
             // Let's not let that happen.
-            Slog.wtf(TAG, "Restarting service that is not needed: " + r);
             return;
         }
         try {
@@ -2321,13 +2287,7 @@ public final class ActiveServices {
                     // destroying list, we don't need to make sure to remove it from it.
                     // If the app is null, then it was probably removed because the process died,
                     // otherwise wtf
-                    if (r.app != null) {
-                        Slog.w(TAG, "Service done with onDestroy, but not inDestroying: "
-                                + r + ", app=" + r.app);
-                    }
                 } else if (r.executeNesting != 1) {
-                    Slog.w(TAG, "Service done with onDestroy, but executeNesting="
-                            + r.executeNesting + ": " + r);
                     // Fake it to keep from ANR due to orphaned entry.
                     r.executeNesting = 1;
                 }
@@ -2335,9 +2295,6 @@ public final class ActiveServices {
             final long origId = Binder.clearCallingIdentity();
             serviceDoneExecutingLocked(r, inDestroying, inDestroying);
             Binder.restoreCallingIdentity(origId);
-        } else {
-            Slog.w(TAG, "Done executing unknown service from pid "
-                    + Binder.getCallingPid());
         }
     }
 
@@ -2467,7 +2424,6 @@ public final class ActiveServices {
             if ((proc.uid == sr.appInfo.uid
                     && proc.processName.equals(sr.processName))
                     || sr.isolatedProc == proc) {
-                Slog.w(TAG, "Forcing bringing down service: " + sr);
                 sr.isolatedProc = null;
                 mPendingServices.remove(i);
                 i--;
@@ -2697,10 +2653,6 @@ public final class ActiveServices {
             // we actually are maintaining, just let it drop.
             final ServiceRecord curRec = smap.mServicesByName.get(sr.name);
             if (curRec != sr) {
-                if (curRec != null) {
-                    Slog.wtf(TAG, "Service " + sr + " in process " + app
-                            + " not same as in map: " + curRec);
-                }
                 continue;
             }
 
@@ -2708,8 +2660,6 @@ public final class ActiveServices {
             // back in the pending list.
             if (allowRestart && sr.crashCount >= 2 && (sr.serviceInfo.applicationInfo.flags
                     &ApplicationInfo.FLAG_PERSISTENT) == 0) {
-                Slog.w(TAG, "Service crashed " + sr.crashCount
-                        + " times, stopping: " + sr);
                 EventLog.writeEvent(EventLogTags.AM_SERVICE_CRASHED_TOO_MUCH,
                         sr.userId, sr.crashCount, sr.shortName, app.pid);
                 bringDownServiceLocked(sr);
@@ -2918,7 +2868,6 @@ public final class ActiveServices {
                 }
             }
             if (timeout != null && mAm.mLruProcesses.contains(proc)) {
-                Slog.w(TAG, "Timeout executing service: " + timeout);
                 StringWriter sw = new StringWriter();
                 PrintWriter pw = new FastPrintWriter(sw, false, 1024);
                 pw.println(timeout);

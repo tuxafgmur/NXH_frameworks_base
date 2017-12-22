@@ -134,8 +134,6 @@ class ActivityManagerShellCommand extends ShellCommand {
             if (!mInternal.mTrackingAssociations) {
                 mInternal.mTrackingAssociations = true;
                 pw.println("Association tracking started.");
-            } else {
-                pw.println("Association tracking already enabled.");
             }
         }
         return 0;
@@ -149,8 +147,6 @@ class ActivityManagerShellCommand extends ShellCommand {
                 mInternal.mTrackingAssociations = false;
                 mInternal.mAssociations.clear();
                 pw.println("Association tracking stopped.");
-            } else {
-                pw.println("Association tracking not running.");
             }
         }
         return 0;

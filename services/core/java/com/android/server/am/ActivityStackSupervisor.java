@@ -1323,12 +1323,6 @@ public final class ActivityStackSupervisor implements DisplayListener {
                 // process of the .apk, which is the only thing that will be
                 // considered heavy-weight.
                 if (app.processName.equals(app.info.packageName)) {
-                    if (mService.mHeavyWeightProcess != null
-                            && mService.mHeavyWeightProcess != app) {
-                        Slog.w(TAG, "Starting new heavy weight process " + app
-                                + " when already running "
-                                + mService.mHeavyWeightProcess);
-                    }
                     mService.mHeavyWeightProcess = app;
                     Message msg = mService.mHandler.obtainMessage(
                             ActivityManagerService.POST_HEAVY_NOTIFICATION_MSG);
@@ -1555,7 +1549,6 @@ public final class ActivityStackSupervisor implements DisplayListener {
             packageInfo = mService.mContext.getPackageManager()
                     .getPackageInfo(callingPackage, PackageManager.GET_PERMISSIONS);
         } catch (PackageManager.NameNotFoundException e) {
-            Slog.i(TAG, "Cannot find package info for " + callingPackage);
             return ACTIVITY_RESTRICTION_NONE;
         }
 
@@ -1663,7 +1656,6 @@ public final class ActivityStackSupervisor implements DisplayListener {
             // us, we can now deliver.
             r.idle = true;
 
-            //Slog.i(TAG, "IDLE: mBooted=" + mBooted + ", fromTimeout=" + fromTimeout);
             if (isFocusedStack(r.task.stack) || fromTimeout) {
                 booting = checkFinishBootingLocked();
             }
@@ -2523,13 +2515,11 @@ public final class ActivityStackSupervisor implements DisplayListener {
             String reason, boolean animate, boolean deferResume) {
         final TaskRecord task = anyTaskForIdLocked(taskId);
         if (task == null) {
-            Slog.w(TAG, "moveTaskToStack: no task for id=" + taskId);
             return false;
         }
 
         if (task.stack != null && task.stack.mStackId == stackId) {
             // You are already in the right stack silly...
-            Slog.i(TAG, "moveTaskToStack: taskId=" + taskId + " already in stackId=" + stackId);
             return true;
         }
 

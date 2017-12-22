@@ -246,23 +246,11 @@ class ActivityStarter {
                 callingPid = callerApp.pid;
                 callingUid = callerApp.info.uid;
             } else {
-                Slog.w(TAG, "Unable to find app for caller " + caller
-                        + " (pid=" + callingPid + ") when starting: "
-                        + intent.toString());
                 err = ActivityManager.START_PERMISSION_DENIED;
             }
         }
 
         final int userId = aInfo != null ? UserHandle.getUserId(aInfo.applicationInfo.uid) : 0;
-
-        if (err == ActivityManager.START_SUCCESS) {
-            Slog.i(TAG, "START u" + userId + " {" + intent.toShortString(true, true, true, false)
-                    + "} from uid " + callingUid
-                    + " on display " + (container == null ? (mSupervisor.mFocusedStack == null ?
-                    Display.DEFAULT_DISPLAY : mSupervisor.mFocusedStack.mDisplayId) :
-                    (container.mActivityDisplay == null ? Display.DEFAULT_DISPLAY :
-                            container.mActivityDisplay.mDisplayId)));
-        }
 
         ActivityRecord sourceRecord = null;
         ActivityRecord resultRecord = null;
@@ -335,13 +323,9 @@ class ActivityStarter {
                     intent.addCategory(Intent.CATEGORY_VOICE);
                     if (!AppGlobals.getPackageManager().activitySupportsIntent(
                             intent.getComponent(), intent, resolvedType)) {
-                        Slog.w(TAG,
-                                "Activity being started in current voice task does not support voice: "
-                                        + intent);
                         err = ActivityManager.START_NOT_VOICE_COMPATIBLE;
                     }
                 } catch (RemoteException e) {
-                    Slog.w(TAG, "Failure checking voice capabilities", e);
                     err = ActivityManager.START_NOT_VOICE_COMPATIBLE;
                 }
             }
@@ -353,13 +337,9 @@ class ActivityStarter {
             try {
                 if (!AppGlobals.getPackageManager().activitySupportsIntent(intent.getComponent(),
                         intent, resolvedType)) {
-                    Slog.w(TAG,
-                            "Activity being started in new voice task does not support: "
-                                    + intent);
                     err = ActivityManager.START_NOT_VOICE_COMPATIBLE;
                 }
             } catch (RemoteException e) {
-                Slog.w(TAG, "Failure checking voice capabilities", e);
                 err = ActivityManager.START_NOT_VOICE_COMPATIBLE;
             }
         }
@@ -855,9 +835,6 @@ class ActivityStarter {
                             if (callerApp != null) {
                                 appCallingUid = callerApp.info.uid;
                             } else {
-                                Slog.w(TAG, "Unable to find app for caller " + caller
-                                        + " (pid=" + callingPid + ") when starting: "
-                                        + intent.toString());
                                 ActivityOptions.abort(options);
                                 return ActivityManager.START_PERMISSION_DENIED;
                             }
@@ -1400,7 +1377,6 @@ class ActivityStarter {
         // not actually be in recents.  Check for that, and if it isn't in recents just
         // consider it invalid.
         if (inTask != null && !inTask.inRecents) {
-            Slog.w(TAG, "Starting activity in task not in recents: " + inTask);
             mInTask = null;
         }
 
@@ -1430,7 +1406,6 @@ class ActivityStarter {
             // yet the caller has requested a result back.  Well, that is pretty messed up,
             // so instead immediately send back a cancel and let the new task continue launched
             // as normal without a dependency on its originator.
-            Slog.w(TAG, "Activity is launching as a new task, so cancelling activity result.");
             mStartActivity.resultTo.task.stack.sendActivityResultLocked(-1, mStartActivity.resultTo,
                     mStartActivity.resultWho, mStartActivity.requestCode, RESULT_CANCELED, null);
             mStartActivity.resultTo = null;
@@ -1504,8 +1479,6 @@ class ActivityStarter {
                 // This activity is not being started from another...  in this
                 // case we -always- start a new task.
                 if ((mLaunchFlags & FLAG_ACTIVITY_NEW_TASK) == 0 && mInTask == null) {
-                    Slog.w(TAG, "startActivity called from non-Activity context; forcing " +
-                            "Intent.FLAG_ACTIVITY_NEW_TASK for: " + mIntent);
                     mLaunchFlags |= FLAG_ACTIVITY_NEW_TASK;
                 }
             } else if (mSourceRecord.launchMode == LAUNCH_SINGLE_INSTANCE) {
@@ -1536,8 +1509,6 @@ class ActivityStarter {
         // blindly throw it in to that task.  Instead we will take the NEW_TASK flow and try to find
         // a task for it. But save the task information so it can be used when creating the new task.
         if ((mLaunchFlags & FLAG_ACTIVITY_NEW_TASK) == 0) {
-            Slog.w(TAG, "startActivity called from finishing " + mSourceRecord
-                    + "; forcing " + "Intent.FLAG_ACTIVITY_NEW_TASK for: " + mIntent);
             mLaunchFlags |= FLAG_ACTIVITY_NEW_TASK;
             mNewTaskInfo = mSourceRecord.info;
             mNewTaskIntent = mSourceRecord.task.intent;
@@ -1940,8 +1911,6 @@ class ActivityStarter {
         if ((launchFlags & Intent.FLAG_ACTIVITY_NEW_DOCUMENT) != 0 &&
                 (launchSingleInstance || launchSingleTask)) {
             // We have a conflict between the Intent and the Activity manifest, manifest wins.
-            Slog.i(TAG, "Ignoring FLAG_ACTIVITY_NEW_DOCUMENT, launchMode is " +
-                    "\"singleInstance\" or \"singleTask\"");
             launchFlags &=
                     ~(Intent.FLAG_ACTIVITY_NEW_DOCUMENT | FLAG_ACTIVITY_MULTIPLE_TASK);
         } else {

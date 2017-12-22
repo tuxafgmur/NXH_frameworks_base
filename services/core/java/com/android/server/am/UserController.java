@@ -230,7 +230,6 @@ final class UserController {
     private void finishUserBoot(UserState uss, IIntentReceiver resultTo) {
         final int userId = uss.mHandle.getIdentifier();
 
-        Slog.d(TAG, "Finishing user boot " + userId);
         synchronized (mService) {
             // Bail if we ended up with a stale user
             if (mStartedUsers.get(userId) != uss) return;
@@ -264,13 +263,9 @@ final class UserController {
                 final UserInfo parent = getUserManager().getProfileParent(userId);
                 if (parent != null
                         && isUserRunningLocked(parent.id, ActivityManager.FLAG_AND_UNLOCKED)) {
-                    Slog.d(TAG, "User " + userId + " (parent " + parent.id
-                            + "): attempting unlock because parent is unlocked");
                     maybeUnlockUser(userId);
                 } else {
                     String parentId = (parent == null) ? "<null>" : String.valueOf(parent.id);
-                    Slog.d(TAG, "User " + userId + " (parent " + parentId
-                            + "): delaying unlock because parent is locked");
                 }
             } else {
                 maybeUnlockUser(userId);
@@ -402,7 +397,6 @@ final class UserController {
 
             if (!userInfo.isInitialized()) {
                 if (userId != UserHandle.USER_SYSTEM) {
-                    Slog.d(TAG, "Initializing user #" + userId);
                     Intent intent = new Intent(Intent.ACTION_USER_INITIALIZE);
                     intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
                     mService.broadcastIntentLocked(null, null, intent, null,
@@ -419,7 +413,6 @@ final class UserController {
                 }
             }
 
-            Slog.d(TAG, "Sending BOOT_COMPLETE user #" + userId);
             // Do not report secondary users, runtime restarts or first boot/upgrade
             if (userId == UserHandle.USER_SYSTEM
                     && !mService.mSystemServiceManager.isRuntimeRestarted()
@@ -737,9 +730,6 @@ final class UserController {
         for (; i < profilesToStartSize && i < (MAX_RUNNING_USERS - 1); ++i) {
             startUser(profilesToStart.get(i).id, /* foreground= */ false);
         }
-        if (i < profilesToStartSize) {
-            Slog.w(TAG, "More profiles than MAX_RUNNING_USERS");
-        }
     }
 
     private UserManagerService getUserManager() {
@@ -810,11 +800,9 @@ final class UserController {
 
                 final UserInfo userInfo = getUserInfo(userId);
                 if (userInfo == null) {
-                    Slog.w(TAG, "No user info for user #" + userId);
                     return false;
                 }
                 if (foreground && userInfo.isManagedProfile()) {
-                    Slog.w(TAG, "Cannot switch to User #" + userId + ": not a full user");
                     return false;
                 }
 
@@ -997,7 +985,6 @@ final class UserController {
                     // We always want to unlock user storage, even user is not started yet
                     mountService.unlockUserKey(userId, userInfo.serialNumber, token, secret);
                 } catch (RemoteException | RuntimeException e) {
-                    Slog.w(TAG, "Failed to unlock: " + e.getMessage());
                 }
             }
             // Bail if user isn't actually running, otherwise register the given
@@ -1023,8 +1010,6 @@ final class UserController {
                 final int testUserId = mStartedUsers.keyAt(i);
                 final UserInfo parent = getUserManager().getProfileParent(testUserId);
                 if (parent != null && parent.id == userId && testUserId != userId) {
-                    Slog.d(TAG, "User " + testUserId + " (parent " + parent.id
-                            + "): attempting unlock because parent was just unlocked");
                     childProfilesToUnlock.add(testUserId);
                 }
             }
@@ -1089,14 +1074,11 @@ final class UserController {
 
     void timeoutUserSwitch(UserState uss, int oldUserId, int newUserId) {
         synchronized (mService) {
-            Slog.wtf(TAG, "User switch timeout: from " + oldUserId + " to " + newUserId
-                    + ". Observers that didn't send results: " + mCurWaitingUserSwitchCallbacks);
             sendContinueUserSwitchLocked(uss, oldUserId, newUserId);
         }
     }
 
     void dispatchUserSwitch(final UserState uss, final int oldUserId, final int newUserId) {
-        Slog.d(TAG, "Dispatch onUserSwitching oldUser #" + oldUserId + " newUser #" + newUserId);
         final int observerCount = mUserSwitchObservers.beginBroadcast();
         if (observerCount > 0) {
             final ArraySet<String> curWaitingUserSwitchCallbacks = new ArraySet<>();
@@ -1118,10 +1100,6 @@ final class UserController {
                         public void sendResult(Bundle data) throws RemoteException {
                             synchronized (mService) {
                                 long delay = SystemClock.elapsedRealtime() - dispatchStartedTime;
-                                if (delay > USER_SWITCH_TIMEOUT) {
-                                    Slog.wtf(TAG, "User switch timeout: observer "  + name
-                                            + " sent result after " + delay + " ms");
-                                }
                                 // Early return if this session is no longer valid
                                 if (curWaitingUserSwitchCallbacks
                                         != mCurWaitingUserSwitchCallbacks) {
@@ -1155,7 +1133,6 @@ final class UserController {
     }
 
     void continueUserSwitch(UserState uss, int oldUserId, int newUserId) {
-        Slog.d(TAG, "Continue user switch oldUser #" + oldUserId + ", newUser #" + newUserId);
         synchronized (mService) {
             mService.mWindowManager.stopFreezingScreen();
         }

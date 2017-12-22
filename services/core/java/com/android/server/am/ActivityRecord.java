@@ -593,7 +593,6 @@ final class ActivityRecord {
         try {
             return Token.tokenToActivityRecordLocked((Token)token);
         } catch (ClassCastException e) {
-            Slog.w(TAG, "Bad activity token: " + token, e);
             return null;
         }
     }
@@ -1057,7 +1056,6 @@ final class ActivityRecord {
                     }
                     break;
                 default:
-                    Slog.e(TAG, "applyOptionsLocked: Unknown animationType=" + animationType);
                     break;
             }
             pendingOptions = null;
