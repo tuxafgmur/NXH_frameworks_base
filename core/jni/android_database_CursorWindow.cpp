@@ -16,7 +16,7 @@
 
 #undef LOG_TAG
 #define LOG_TAG "CursorWindow"
-#define LOG_NDEBUG 0
+//#define LOG_NDEBUG 0
 
 #include <inttypes.h>
 #include <jni.h>

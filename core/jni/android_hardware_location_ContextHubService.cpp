@@ -16,7 +16,7 @@
 
 #include "context_hub.h"
 
-#define LOG_NDEBUG 0
+// #define LOG_NDEBUG 0
 #define LOG_TAG "ContextHubService"
 
 #include <inttypes.h>

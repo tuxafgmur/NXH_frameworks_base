@@ -16,7 +16,7 @@
 
 #define LOG_TAG "GnssLocationProvider"
 
-#define LOG_NDEBUG 0
+//#define LOG_NDEBUG 0
 
 #include "JNIHelp.h"
 #include "jni.h"
