@@ -66,7 +66,6 @@ class RotationHelper {
         if (!sWindowOrientationListener.canDetectOrientation()) {
             // cannot use com.android.server.policy.WindowOrientationListener, revert to public
             // orientation API
-            Log.i(TAG, "Not using WindowOrientationListener, reverting to OrientationListener");
             sWindowOrientationListener.disable();
             sWindowOrientationListener = null;
             sOrientationListener = new AudioOrientationListener(context);
@@ -108,7 +107,6 @@ class RotationHelper {
     }
 
     private static void publishRotation(int rotation) {
-        Log.v(TAG, "publishing device rotation =" + rotation + " (x90deg)");
         switch (rotation) {
             case Surface.ROTATION_0:
                 AudioSystem.setParameters("rotation=0");

@@ -136,7 +136,6 @@ public class MediaFocusControl {
         // is the current top of the focus stack abandoning focus? (because of request, not death)
         if (!mFocusStack.empty() && mFocusStack.peek().hasSameClient(clientToRemove))
         {
-            //Log.i(TAG, "   removeFocusStackEntry() removing top of stack");
             FocusRequester fr = mFocusStack.pop();
             fr.release();
             if (notifyFocusFollowers) {
@@ -157,8 +156,6 @@ public class MediaFocusControl {
             while(stackIterator.hasNext()) {
                 FocusRequester fr = stackIterator.next();
                 if(fr.hasSameClient(clientToRemove)) {
-                    Log.i(TAG, "AudioFocus  removeFocusStackEntry(): removing entry for "
-                            + clientToRemove);
                     stackIterator.remove();
                     // stack entry not used anymore, clear references
                     fr.release();
@@ -182,7 +179,6 @@ public class MediaFocusControl {
         while(stackIterator.hasNext()) {
             FocusRequester fr = stackIterator.next();
             if(fr.hasSameBinder(cb)) {
-                Log.i(TAG, "AudioFocus  removeFocusStackEntryOnDeath(): removing entry for " + cb);
                 stackIterator.remove();
                 // stack entry not used anymore, clear references
                 fr.release();
@@ -234,8 +230,6 @@ public class MediaFocusControl {
         }
         if (lastLockedFocusOwnerIndex == mFocusStack.size()) {
             // this should not happen, but handle it and log an error
-            Log.e(TAG, "No exclusive focus owner found in propagateFocusLossFromGain_syncAf()",
-                    new Exception());
             // no exclusive owner, push at top of stack, focus is granted, propagate change
             propagateFocusLossFromGain_syncAf(nfr.getGainRequest());
             mFocusStack.push(nfr);
@@ -332,8 +326,6 @@ public class MediaFocusControl {
                                 // top of focus stack always has focus
                                 AudioManager.AUDIOFOCUS_REQUEST_GRANTED);
                     } catch (RemoteException e) {
-                        Log.e(TAG, "Can't call notifyAudioFocusGrant() on IAudioPolicyCallback "
-                                + pcb2.asBinder(), e);
                     }
                 }
             }
@@ -350,8 +342,6 @@ public class MediaFocusControl {
                 // oneway
                 pcb.notifyAudioFocusGrant(afi, requestResult);
             } catch (RemoteException e) {
-                Log.e(TAG, "Can't call notifyAudioFocusGrant() on IAudioPolicyCallback "
-                        + pcb.asBinder(), e);
             }
         }
     }
@@ -365,8 +355,6 @@ public class MediaFocusControl {
                 // oneway
                 pcb.notifyAudioFocusLoss(afi, wasDispatched);
             } catch (RemoteException e) {
-                Log.e(TAG, "Can't call notifyAudioFocusLoss() on IAudioPolicyCallback "
-                        + pcb.asBinder(), e);
             }
         }
     }
@@ -384,14 +372,8 @@ public class MediaFocusControl {
     /** @see AudioManager#requestAudioFocus(AudioManager.OnAudioFocusChangeListener, int, int, int) */
     protected int requestAudioFocus(AudioAttributes aa, int focusChangeHint, IBinder cb,
             IAudioFocusDispatcher fd, String clientId, String callingPackageName, int flags) {
-        Log.i(TAG, " AudioFocus  requestAudioFocus() from uid/pid " + Binder.getCallingUid()
-                + "/" + Binder.getCallingPid()
-                + " clientId=" + clientId
-                + " req=" + focusChangeHint
-                + " flags=0x" + Integer.toHexString(flags));
         // we need a valid binder callback for clients
         if (!cb.pingBinder()) {
-            Log.e(TAG, " AudioFocus DOA client for requestAudioFocus(), aborting.");
             return AudioManager.AUDIOFOCUS_REQUEST_FAILED;
         }
 
@@ -422,7 +404,6 @@ public class MediaFocusControl {
                 cb.linkToDeath(afdh, 0);
             } catch (RemoteException e) {
                 // client has already died!
-                Log.w(TAG, "AudioFocus  requestAudioFocus() could not link to "+cb+" binder death");
                 return AudioManager.AUDIOFOCUS_REQUEST_FAILED;
             }
 
@@ -482,9 +463,6 @@ public class MediaFocusControl {
      * */
     protected int abandonAudioFocus(IAudioFocusDispatcher fl, String clientId, AudioAttributes aa) {
         // AudioAttributes are currently ignored, to be used for zones
-        Log.i(TAG, " AudioFocus  abandonAudioFocus() from uid/pid " + Binder.getCallingUid()
-                + "/" + Binder.getCallingPid()
-                + " clientId=" + clientId);
         try {
             // this will take care of notifying the new focus owner if needed
             synchronized(mAudioFocusLock) {
@@ -494,7 +472,6 @@ public class MediaFocusControl {
             // Catching this exception here is temporary. It is here just to prevent
             // a crash seen when the "Silent" notification is played. This is believed to be fixed
             // but this try catch block is left just to be safe.
-            Log.e(TAG, "FATAL EXCEPTION AudioFocus  abandonAudioFocus() caused " + cme);
             cme.printStackTrace();
         }
 

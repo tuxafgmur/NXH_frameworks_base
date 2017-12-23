@@ -1921,7 +1921,6 @@ public class AudioService extends IAudioService.Stub {
                     cb.linkToDeath(this, 0);
                 } catch (RemoteException e) {
                     // Client has died!
-                    Log.w(TAG, "ForceControlStreamClient() could not link to "+cb+" binder death");
                     cb = null;
                 }
             }
@@ -1930,9 +1929,7 @@ public class AudioService extends IAudioService.Stub {
 
         public void binderDied() {
             synchronized(mForceControlStreamLock) {
-                Log.w(TAG, "SCO client died");
                 if (mForceControlStreamClient != this) {
-                    Log.w(TAG, "unregistered control stream client died");
                 } else {
                     mForceControlStreamClient = null;
                     mVolumeControlStream = -1;
@@ -2104,7 +2101,6 @@ public class AudioService extends IAudioService.Stub {
         }
 
         public void binderDied() {
-            Log.w(TAG, "Recorder with remote submix at full volume died " + mICallback);
             forceRemoteSubmixFullVolume(false, mICallback);
         }
     }
@@ -2146,7 +2142,6 @@ public class AudioService extends IAudioService.Stub {
         }
         if ((PackageManager.PERMISSION_GRANTED != mContext.checkCallingOrSelfPermission(
                         android.Manifest.permission.CAPTURE_AUDIO_OUTPUT))) {
-            Log.w(TAG, "Trying to call forceRemoteSubmixFullVolume() without CAPTURE_AUDIO_OUTPUT");
             return;
         }
         synchronized(mRmtSbmxFullVolDeathHandlers) {
@@ -2530,10 +2525,8 @@ public class AudioService extends IAudioService.Stub {
         public void binderDied() {
             int newModeOwnerPid = 0;
             synchronized(mSetModeDeathHandlers) {
-                Log.w(TAG, "setMode() client died");
                 int index = mSetModeDeathHandlers.indexOf(this);
                 if (index < 0) {
-                    Log.w(TAG, "unregistered setMode() client died");
                 } else {
                     newModeOwnerPid = setModeInt(AudioSystem.MODE_NORMAL, mCb, mPid, TAG);
                 }
@@ -2644,7 +2637,6 @@ public class AudioService extends IAudioService.Stub {
                     cb.linkToDeath(hdlr, 0);
                 } catch (RemoteException e) {
                     // Client has died!
-                    Log.w(TAG, "setMode() could not link to "+cb+" binder death");
                 }
 
                 // Last client to call setMode() is always at top of client list
@@ -2771,7 +2763,6 @@ public class AudioService extends IAudioService.Stub {
                             Field field = AudioManager.class.getField(id);
                             fx = field.getInt(null);
                         } catch (Exception e) {
-                            Log.w(TAG, "Invalid touch sound ID: "+id);
                             continue;
                         }
 
@@ -2787,11 +2778,8 @@ public class AudioService extends IAudioService.Stub {
                 }
             }
         } catch (Resources.NotFoundException e) {
-            Log.w(TAG, "audio assets file not found", e);
         } catch (XmlPullParserException e) {
-            Log.w(TAG, "XML parser exception reading touch sound assets", e);
         } catch (IOException e) {
-            Log.w(TAG, "I/O exception reading touch sound assets", e);
         } finally {
             if (parser != null) {
                 parser.close();
@@ -2807,7 +2795,6 @@ public class AudioService extends IAudioService.Stub {
     /** @see AudioManager#playSoundEffect(int, float) */
     public void playSoundEffectVolume(int effectType, float volume) {
         if (effectType >= AudioManager.NUM_SOUND_EFFECTS || effectType < 0) {
-            Log.w(TAG, "AudioService effectType value " + effectType + " out of range");
             return;
         }
 
@@ -2829,7 +2816,6 @@ public class AudioService extends IAudioService.Stub {
                 try {
                     reply.wait(SOUND_EFFECTS_LOAD_TIMEOUT_MS);
                 } catch (InterruptedException e) {
-                    Log.w(TAG, "loadSoundEffects Interrupted while waiting sound pool loaded.");
                 }
             }
         }
@@ -3078,10 +3064,8 @@ public class AudioService extends IAudioService.Stub {
 
         public void binderDied() {
             synchronized(mScoClients) {
-                Log.w(TAG, "SCO client died");
                 int index = mScoClients.indexOf(this);
                 if (index < 0) {
-                    Log.w(TAG, "unregistered SCO client died");
                 } else {
                     clearCount(true);
                     mScoClients.remove(this);
@@ -3097,7 +3081,6 @@ public class AudioService extends IAudioService.Stub {
                         mCb.linkToDeath(this, 0);
                     } catch (RemoteException e) {
                         // client has already died!
-                        Log.w(TAG, "ScoClient  incCount() could not link to "+mCb+" binder death");
                     }
                 }
                 mStartcount++;
@@ -3107,14 +3090,12 @@ public class AudioService extends IAudioService.Stub {
         public void decCount() {
             synchronized(mScoClients) {
                 if (mStartcount == 0) {
-                    Log.w(TAG, "ScoClient.decCount() already 0");
                 } else {
                     mStartcount--;
                     if (mStartcount == 0) {
                         try {
                             mCb.unlinkToDeath(this, 0);
                         } catch (NoSuchElementException e) {
-                            Log.w(TAG, "decCount() going to 0 but not registered to binder");
                         }
                     }
                     requestScoState(BluetoothHeadset.STATE_AUDIO_DISCONNECTED, 0);
@@ -3128,7 +3109,6 @@ public class AudioService extends IAudioService.Stub {
                     try {
                         mCb.unlinkToDeath(this, 0);
                     } catch (NoSuchElementException e) {
-                        Log.w(TAG, "clearCount() mStartcount: "+mStartcount+" != 0 but not registered to binder");
                     }
                 }
                 mStartcount = 0;
@@ -3402,7 +3382,6 @@ public class AudioService extends IAudioService.Stub {
             state == BluetoothProfile.STATE_DISCONNECTING) &&
             mBluetoothHeadset != null &&
             mBluetoothHeadset.getAudioState(btDevice) == BluetoothHeadset.STATE_AUDIO_CONNECTED) {
-            Log.w(TAG, "SCO is there with another device, returning");
             return;
         }
 
@@ -3429,14 +3408,10 @@ public class AudioService extends IAudioService.Stub {
                     synchronized (mA2dpAvrcpLock) {
                         mA2dp = (BluetoothA2dp) proxy;
                         if (mConnectedBTDevicesList.size() > 0) {
-                            Log.d(TAG,"A2dp connection list not empty, purge it, size " +
-                                    mConnectedBTDevicesList.size());
                             mConnectedBTDevicesList.clear();
                         }
                         //In Dual A2dp, we can have two devices connected
                         deviceList = mA2dp.getConnectedDevices();
-                        Log.d(TAG, "onServiceConnected: A2dp Service connected: " +
-                                deviceList.size());
                         for (int i = 0; i < deviceList.size(); i++) {
                             //Add the device in Connected list
                             btDevice = deviceList.get(i);
@@ -3562,7 +3537,6 @@ public class AudioService extends IAudioService.Stub {
         synchronized (mConnectedDevices) {
             synchronized (mA2dpAvrcpLock) {
                 ArraySet<String> toRemove = null;
-                Log.d(TAG,"mConnectedBTDevicesList size " + mConnectedBTDevicesList.size());
                 if (mConnectedBTDevicesList.size() > 0) {
                     mConnectedBTDevicesList.clear();
                 }
@@ -4142,32 +4116,25 @@ public class AudioService extends IAudioService.Stub {
         }
         /*check the state of the currnt device*/
         if (state == BluetoothA2dp.STATE_CONNECTING) {
-            Log.d(TAG, "Device is still connecting ");
             return delay;
         }
         if ((mConnectedBTDevicesList.contains(device) &&
             (state == BluetoothA2dp.STATE_CONNECTED))) {
-            Log.d(TAG, "Device conn is updated again, ignore ");
             return delay;
         }
         if (!mConnectedBTDevicesList.contains(device) &&
             (state == BluetoothA2dp.STATE_CONNECTED)) {
             /*add the device in the list*/
-            Log.d(TAG, "Add new connected device in the list: " + device);
             mConnectedBTDevicesList.add(device);
             if (mConnectedBTDevicesList.size() > 1) {
-                Log.d(TAG, "Second device connected, add new device ");
                 return delay;
             }
         } else if ((state == BluetoothA2dp.STATE_DISCONNECTED) ||
             (state == BluetoothA2dp.STATE_DISCONNECTING)) {
-            Log.d(TAG, "Device is getting disconnected: " + device);
             if (mConnectedBTDevicesList.contains(device)) {
-                Log.d(TAG, "Remove the BT device ");
                 mConnectedBTDevicesList.remove(device);
             }
             if (mConnectedBTDevicesList.size() > 0) {
-                Log.d(TAG, "Not all are disconnected ");
                 return delay;
             }
         }
@@ -4424,9 +4391,6 @@ public class AudioService extends IAudioService.Stub {
                 index = (index + 5) / 10;
                 // log base stream changes to the event log
                 if (mStreamVolumeAlias[mStreamType] == mStreamType) {
-                    if (caller == null) {
-                        Log.w(TAG, "No caller for volume_changed event", new Throwable());
-                    }
                     EventLogTags.writeVolumeChanged(mStreamType, oldIndex, index, mIndexMax / 10,
                             caller);
                 }
@@ -4705,7 +4669,6 @@ public class AudioService extends IAudioService.Stub {
 
             synchronized (mSoundEffectsLock) {
                 if (!mSystemReady) {
-                    Log.w(TAG, "onLoadSoundEffects() called before boot complete");
                     return false;
                 }
 
@@ -4731,12 +4694,10 @@ public class AudioService extends IAudioService.Stub {
                         // Wait for mSoundPoolCallBack to be set by the other thread
                         mSoundEffectsLock.wait(SOUND_EFFECTS_LOAD_TIMEOUT_MS);
                     } catch (InterruptedException e) {
-                        Log.w(TAG, "Interrupted while waiting sound pool listener thread.");
                     }
                 }
 
                 if (mSoundPoolCallBack == null) {
-                    Log.w(TAG, "onLoadSoundEffects() SoundPool listener or thread creation error");
                     if (mSoundPoolLooper != null) {
                         mSoundPoolLooper.quit();
                         mSoundPoolLooper = null;
@@ -4781,7 +4742,6 @@ public class AudioService extends IAudioService.Stub {
                         }
                         int sampleId = mSoundPool.load(filePath, 0);
                         if (sampleId <= 0) {
-                            Log.w(TAG, "Soundpool could not load file: "+filePath);
                         } else {
                             SOUND_EFFECT_FILES_MAP[effect][1] = sampleId;
                             poolId[SOUND_EFFECT_FILES_MAP[effect][0]] = sampleId;
@@ -4803,7 +4763,6 @@ public class AudioService extends IAudioService.Stub {
                             mSoundEffectsLock.wait(SOUND_EFFECTS_LOAD_TIMEOUT_MS);
                             status = mSoundPoolCallBack.status();
                         } catch (InterruptedException e) {
-                            Log.w(TAG, "Interrupted while waiting sound pool callback.");
                         }
                     }
                 } else {
@@ -4816,8 +4775,6 @@ public class AudioService extends IAudioService.Stub {
                 }
                 mSoundPoolListenerThread = null;
                 if (status != 0) {
-                    Log.w(TAG,
-                            "onLoadSoundEffects(), Error "+status+ " while loading samples");
                     for (int effect = 0; effect < AudioManager.NUM_SOUND_EFFECTS; effect++) {
                         if (SOUND_EFFECT_FILES_MAP[effect][1] > 0) {
                             SOUND_EFFECT_FILES_MAP[effect][1] = -1;
@@ -4910,11 +4867,8 @@ public class AudioService extends IAudioService.Stub {
                         });
                         mediaPlayer.start();
                     } catch (IOException ex) {
-                        Log.w(TAG, "MediaPlayer IOException: "+ex);
                     } catch (IllegalArgumentException ex) {
-                        Log.w(TAG, "MediaPlayer IllegalArgumentException: "+ex);
                     } catch (IllegalStateException ex) {
-                        Log.w(TAG, "MediaPlayer IllegalStateException: "+ex);
                     }
                 }
             }
@@ -4926,7 +4880,6 @@ public class AudioService extends IAudioService.Stub {
                     mp.stop();
                     mp.release();
                 } catch (IllegalStateException ex) {
-                    Log.w(TAG, "MediaPlayer IllegalStateException: "+ex);
                 }
             }
         }
@@ -4988,7 +4941,6 @@ public class AudioService extends IAudioService.Stub {
 
                 case MSG_PLAY_SOUND_EFFECT:
                     if (isStreamMute(AudioSystem.STREAM_SYSTEM)) {
-                        Log.d(TAG, "Stream muted, skip playback");
                     } else {
                         onPlaySoundEffect(msg.arg1, msg.arg2);
                     }
@@ -5295,7 +5247,6 @@ public class AudioService extends IAudioService.Stub {
                         // the next time isConnected is evaluated, it will be false for the dock
                     }
                 } else {
-                    Log.d(TAG, "All devices are disconneted, update Policymanager ");
                     makeA2dpDeviceUnavailableNow(btDevice.getAddress());
                 }
                 synchronized (mCurAudioRoutes) {
@@ -5340,7 +5291,6 @@ public class AudioService extends IAudioService.Stub {
             Log.d(TAG, "onSetA2dpSourceConnectionState btDevice="+btDevice+" state="+state);
         }
         if (btDevice == null) {
-            Log.d(TAG, "onSetA2dpSourceConnectionState device is null"); //gasati
             return;
         }
         String address = btDevice.getAddress();
@@ -5425,13 +5375,11 @@ public class AudioService extends IAudioService.Stub {
     private int checkSendBecomingNoisyIntent(int device, int state) {
         int delay = 0;
         if (mConnectedBTDevicesList.size() > 1) {
-            Log.d(TAG, "checkSendBecomingNoisyIntent on state: " + state);
             return delay;
         }
 
         if ((state == 0) && ((device & mBecomingNoisyIntentDevices) != 0)) {
             int devices = 0;
-            Log.d(TAG, "checkSendBecomingNoisyIntent update the noise");
             for (int i = 0; i < mConnectedDevices.size(); i++) {
                 int dev = mConnectedDevices.valueAt(i).mDeviceType;
                 if (((dev & AudioSystem.DEVICE_BIT_IN) == 0)
@@ -5548,7 +5496,6 @@ public class AudioService extends IAudioService.Stub {
         try {
             mContext.startActivity(intent);
         } catch (ActivityNotFoundException e) {
-            Log.w(TAG, "No music player Activity was found");
         }
     }
 
@@ -5712,7 +5659,6 @@ public class AudioService extends IAudioService.Stub {
                 state = intent.getIntExtra(BluetoothProfile.EXTRA_STATE,
                                                BluetoothProfile.STATE_DISCONNECTED);
                 BluetoothDevice btDevice = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                Log.d(TAG, "Bt device " + btDevice.getAddress() + "disconnection intent received");
                 setBtScoDeviceConnectionState(btDevice, state);
             } else if (action.equals(BluetoothHeadset.ACTION_AUDIO_STATE_CHANGED)) {
                 boolean broadcast = false;
@@ -5895,7 +5841,6 @@ public class AudioService extends IAudioService.Stub {
                         UserHandle.getUserId(uid),
                         "killBackgroundUserProcessesWithAudioRecordPermission");
             } catch (RemoteException e) {
-                Log.w(TAG, "Error calling killUid", e);
             }
         }
     }
@@ -6420,9 +6365,6 @@ public class AudioService extends IAudioService.Stub {
     private static void readAndSetLowRamDevice()
     {
         int status = AudioSystem.setLowRamDevice(ActivityManager.isLowRamDeviceStatic());
-        if (status != 0) {
-            Log.w(TAG, "AudioFlinger informed of device's low RAM attribute; status " + status);
-        }
     }
 
     private void enforceVolumeController(String action) {
@@ -6451,7 +6393,6 @@ public class AudioService extends IAudioService.Stub {
                     @Override
                     public void binderDied() {
                         if (mVolumeController.isSameBinder(controller)) {
-                            Log.w(TAG, "Current remote volume controller died, unregistering");
                             setVolumeController(null);
                         }
                     }
@@ -6557,7 +6498,6 @@ public class AudioService extends IAudioService.Stub {
             try {
                 mController.displaySafeVolumeWarning(flags);
             } catch (RemoteException e) {
-                Log.w(TAG, "Error calling displaySafeVolumeWarning", e);
             }
         }
 
@@ -6567,7 +6507,6 @@ public class AudioService extends IAudioService.Stub {
             try {
                 mController.volumeChanged(streamType, flags);
             } catch (RemoteException e) {
-                Log.w(TAG, "Error calling volumeChanged", e);
             }
         }
 
@@ -6577,7 +6516,6 @@ public class AudioService extends IAudioService.Stub {
             try {
                 mController.masterMuteChanged(flags);
             } catch (RemoteException e) {
-                Log.w(TAG, "Error calling masterMuteChanged", e);
             }
         }
 
@@ -6587,7 +6525,6 @@ public class AudioService extends IAudioService.Stub {
             try {
                 mController.setLayoutDirection(layoutDirection);
             } catch (RemoteException e) {
-                Log.w(TAG, "Error calling setLayoutDirection", e);
             }
         }
 
@@ -6597,7 +6534,6 @@ public class AudioService extends IAudioService.Stub {
             try {
                 mController.dismiss();
             } catch (RemoteException e) {
-                Log.w(TAG, "Error calling dismiss", e);
             }
         }
     }
@@ -6686,7 +6622,6 @@ public class AudioService extends IAudioService.Stub {
         synchronized (mAudioPolicies) {
             try {
                 if (mAudioPolicies.containsKey(pcb.asBinder())) {
-                    Slog.e(TAG, "Cannot re-register policy");
                     return null;
                 }
                 AudioPolicyProxy app = new AudioPolicyProxy(policyConfig, pcb, hasFocusListener);
@@ -6695,8 +6630,6 @@ public class AudioService extends IAudioService.Stub {
                 mAudioPolicies.put(pcb.asBinder(), app);
             } catch (RemoteException e) {
                 // audio policy owner has already died!
-                Slog.w(TAG, "Audio policy registration failed, could not link to " + pcb +
-                        " binder death", e);
                 return null;
             }
         }
@@ -6708,8 +6641,6 @@ public class AudioService extends IAudioService.Stub {
         synchronized (mAudioPolicies) {
             AudioPolicyProxy app = mAudioPolicies.remove(pcb.asBinder());
             if (app == null) {
-                Slog.w(TAG, "Trying to unregister unknown audio policy for pid "
-                        + Binder.getCallingPid() + " / uid " + Binder.getCallingUid());
                 return;
             } else {
                 pcb.asBinder().unlinkToDeath(app, 0/*flags*/);
@@ -6847,7 +6778,6 @@ public class AudioService extends IAudioService.Stub {
 
         public void binderDied() {
             synchronized (mAudioPolicies) {
-                Log.i(TAG, "audio policy " + mPolicyCallback + " died");
                 release();
                 mAudioPolicies.remove(mPolicyCallback.asBinder());
             }
@@ -6908,7 +6838,6 @@ public class AudioService extends IAudioService.Stub {
                 mUid = mContext.getPackageManager()
                         .getApplicationInfo(mComponent.getPackageName(), 0).uid;
             } catch (Exception e) {
-                Log.w(TAG, "Error loading controller service", e);
             }
             if (DEBUG_VOL) Log.d(TAG, "Reloaded controller service: " + this);
         }
