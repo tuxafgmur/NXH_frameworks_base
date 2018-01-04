@@ -40,7 +40,6 @@ public class ServiceThread extends HandlerThread {
 
         // For debug builds, log event loop stalls to dropbox for analysis.
         if (!mAllowIo && StrictMode.conditionallyEnableDebugLogging()) {
-            Slog.i(TAG, "Enabled StrictMode logging for " + getName() + " looper.");
         }
 
         super.run();

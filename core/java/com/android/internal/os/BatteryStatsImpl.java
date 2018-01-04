@@ -670,7 +670,6 @@ public class BatteryStatsImpl extends BatteryStats {
 
         public void remove(TimeBaseObs observer) {
             if (!mObservers.remove(observer)) {
-                Slog.wtf(TAG, "Removed unknown observer: " + observer);
             }
         }
 
@@ -2001,17 +2000,9 @@ public class BatteryStatsImpl extends BatteryStats {
                 // There is no currently active overflow, so we should no longer have
                 // an overflow entry.
                 if (mMap.containsKey(OVERFLOW_NAME)) {
-                    Slog.wtf(TAG, "Cleaning up with no active overflow, but have overflow entry "
-                            + mMap.get(OVERFLOW_NAME));
                     mMap.remove(OVERFLOW_NAME);
                 }
                 mCurOverflow = null;
-            } else {
-                // There is currently active overflow, so we should still have an overflow entry.
-                if (mCurOverflow == null || !mMap.containsKey(OVERFLOW_NAME)) {
-                    Slog.wtf(TAG, "Cleaning up with active overflow, but no overflow entry: cur="
-                            + mCurOverflow + " map=" + mMap.get(OVERFLOW_NAME));
-                }
             }
         }
 
@@ -2033,7 +2024,6 @@ public class BatteryStatsImpl extends BatteryStats {
                     obj = mCurOverflow;
                     if (obj == null) {
                         // Shouldn't be here, but we'll try to recover.
-                        Slog.wtf(TAG, "Have active overflow " + name + " but null overflow");
                         obj = mCurOverflow = instantiateObject();
                         mMap.put(OVERFLOW_NAME, obj);
                     }
@@ -2095,37 +2085,7 @@ public class BatteryStatsImpl extends BatteryStats {
                 }
             }
 
-            // Huh, they are stopping an active operation but we can't find one!
-            // That's not good.
-            StringBuilder sb = new StringBuilder();
-            sb.append("Unable to find object for ");
-            sb.append(name);
-            sb.append(" in uid ");
-            sb.append(mUid);
-            sb.append(" mapsize=");
-            sb.append(mMap.size());
-            sb.append(" activeoverflow=");
-            sb.append(mActiveOverflow);
-            sb.append(" curoverflow=");
-            sb.append(mCurOverflow);
-            long now = SystemClock.elapsedRealtime();
-            if (mLastOverflowTime != 0) {
-                sb.append(" lastOverflowTime=");
-                TimeUtils.formatDuration(mLastOverflowTime-now, sb);
-            }
-            if (mLastOverflowFinishTime != 0) {
-                sb.append(" lastOverflowFinishTime=");
-                TimeUtils.formatDuration(mLastOverflowFinishTime-now, sb);
-            }
-            if (mLastClearTime != 0) {
-                sb.append(" lastClearTime=");
-                TimeUtils.formatDuration(mLastClearTime-now, sb);
-            }
-            if (mLastCleanupTime != 0) {
-                sb.append(" lastCleanupTime=");
-                TimeUtils.formatDuration(mLastCleanupTime-now, sb);
-            }
-            Slog.wtf(TAG, sb.toString());
+            // They are stopping an active operation but we can't find one!
             return null;
         }
 
@@ -3687,8 +3647,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 if (stepState < 4) {
                     mModStepMode |= (mCurStepMode&STEP_LEVEL_MODE_SCREEN_STATE) ^ stepState;
                     mCurStepMode = (mCurStepMode&~STEP_LEVEL_MODE_SCREEN_STATE) | stepState;
-                } else {
-                    Slog.wtf(TAG, "Unexpected screen state: " + state);
                 }
             }
 
@@ -3829,8 +3787,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 realElapsedRealtimeMs = timestampNs / (1000*1000);
                 long lastUpdateTimeMs = mMobileRadioActiveStartTime;
                 if (realElapsedRealtimeMs < lastUpdateTimeMs) {
-                    Slog.wtf(TAG, "Data connection inactive timestamp " + realElapsedRealtimeMs
-                            + " is before start time " + lastUpdateTimeMs);
                     realElapsedRealtimeMs = elapsedRealtime;
                 } else if (realElapsedRealtimeMs < elapsedRealtime) {
                     mMobileRadioActiveAdjustedTime.addCountLocked(elapsedRealtime
@@ -8759,7 +8715,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 delta = getNetworkStatsDeltaLocked(mWifiIfaces, mWifiNetworkStats);
             }
         } catch (IOException e) {
-            Slog.wtf(TAG, "Failed to get wifi network stats", e);
             return;
         }
 
@@ -8991,7 +8946,6 @@ public class BatteryStatsImpl extends BatteryStats {
                 delta = getNetworkStatsDeltaLocked(mMobileIfaces, mMobileNetworkStats);
             }
         } catch (IOException e) {
-            Slog.wtf(TAG, "Failed to get mobile network stats", e);
             return;
         }
 
@@ -9314,15 +9268,6 @@ public class BatteryStatsImpl extends BatteryStats {
             }
         }
 
-        // Record whether we've seen a non-zero time (for debugging b/22716723).
-        if (wakelockStats.isEmpty()) {
-            Slog.wtf(TAG, "All kernel wakelocks had time of zero");
-        }
-
-        if (numWakelocksSetStale == mKernelWakelockStats.size()) {
-            Slog.wtf(TAG, "All kernel wakelocks were set stale. new version=" +
-                    wakelockStats.kernelWakelockVersion);
-        }
     }
 
     // We use an anonymous class to access these variables,

@@ -2094,7 +2094,6 @@ public class PackageManagerService extends IPackageManager.Stub {
                 }
                 if (SystemClock.uptimeMillis() > timeEnd) {
                     SystemProperties.set(CP_PREOPT_PROPERTY, "timed-out");
-                    Slog.wtf(TAG, "cppreopt did not finish!");
                     break;
                 }
             }
@@ -7731,7 +7730,6 @@ public class PackageManagerService extends IPackageManager.Stub {
 
     private void clearAppDataLIF(PackageParser.Package pkg, int userId, int flags) {
         if (pkg == null) {
-            Slog.wtf(TAG, "Package was null!", new Throwable());
             return;
         }
         clearAppDataLeafLIF(pkg, userId, flags);
@@ -7759,7 +7757,6 @@ public class PackageManagerService extends IPackageManager.Stub {
 
     private void destroyAppDataLIF(PackageParser.Package pkg, int userId, int flags) {
         if (pkg == null) {
-            Slog.wtf(TAG, "Package was null!", new Throwable());
             return;
         }
         destroyAppDataLeafLIF(pkg, userId, flags);
@@ -7787,7 +7784,6 @@ public class PackageManagerService extends IPackageManager.Stub {
 
     private void destroyAppProfilesLIF(PackageParser.Package pkg, int userId) {
         if (pkg == null) {
-            Slog.wtf(TAG, "Package was null!", new Throwable());
             return;
         }
         destroyAppProfilesLeafLIF(pkg);
@@ -7858,7 +7854,6 @@ public class PackageManagerService extends IPackageManager.Stub {
 
     private void clearAppProfilesLIF(PackageParser.Package pkg, int userId) {
         if (pkg == null) {
-            Slog.wtf(TAG, "Package was null!", new Throwable());
             return;
         }
         clearAppProfilesLeafLIF(pkg);
@@ -20128,7 +20123,6 @@ Slog.v(TAG, ":: stepped forward, applying functor at tag " + parser.getName());
      */
     private void prepareAppDataLIF(PackageParser.Package pkg, int userId, int flags) {
         if (pkg == null) {
-            Slog.wtf(TAG, "Package was null!", new Throwable());
             return;
         }
         prepareAppDataLeafLIF(pkg, userId, flags);
@@ -20194,7 +20188,6 @@ Slog.v(TAG, ":: stepped forward, applying functor at tag " + parser.getName());
 
     private void prepareAppDataContentsLIF(PackageParser.Package pkg, int userId, int flags) {
         if (pkg == null) {
-            Slog.wtf(TAG, "Package was null!", new Throwable());
             return;
         }
         prepareAppDataContentsLeafLIF(pkg, userId, flags);
@@ -20371,7 +20364,7 @@ Slog.v(TAG, ":: stepped forward, applying functor at tag " + parser.getName());
     private void checkPackageFrozen(String packageName) {
         synchronized (mPackages) {
             if (!mFrozenPackages.contains(packageName)) {
-                Slog.wtf(TAG, "Expected " + packageName + " to be frozen!", new Throwable());
+                Slog.w(TAG, "Expected " + packageName + " to be frozen!", new Throwable());
             }
         }
     }

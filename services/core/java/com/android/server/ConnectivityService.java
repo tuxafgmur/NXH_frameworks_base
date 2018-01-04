@@ -2670,8 +2670,6 @@ public class ConnectivityService extends IConnectivityManager.Stub
         synchronized (mUidToNetworkRequestCount) {
             int requests = mUidToNetworkRequestCount.get(nri.mUid, 0);
             if (requests < 1) {
-                Slog.wtf(TAG, "BUG: too small request count " + requests + " for UID " +
-                        nri.mUid);
             } else if (requests == 1) {
                 mUidToNetworkRequestCount.removeAt(
                         mUidToNetworkRequestCount.indexOfKey(nri.mUid));
@@ -2714,9 +2712,6 @@ public class ConnectivityService extends IConnectivityManager.Stub
             // network satisfying it, so this loop is wasteful
             for (NetworkAgentInfo otherNai : mNetworkAgentInfos.values()) {
                 if (otherNai.isSatisfyingRequest(nri.request.requestId) && otherNai != nai) {
-                    Slog.wtf(TAG, "Request " + nri.request + " satisfied by " +
-                            otherNai.name() + ", but mNetworkAgentInfos says " +
-                            (nai != null ? nai.name() : "null"));
                 }
             }
 
@@ -2897,7 +2892,6 @@ public class ConnectivityService extends IConnectivityManager.Stub
                 action = ConnectivityManager.ACTION_PROMPT_LOST_VALIDATION;
                 break;
             default:
-                Slog.wtf(TAG, "Unknown notification type " + type);
                 return;
         }
 
@@ -5043,10 +5037,6 @@ public class ConnectivityService extends IConnectivityManager.Stub
                 if (currentNetwork == newNetwork) {
                     mNetworkForRequestId.remove(nri.request.requestId);
                     sendUpdatedScoreToFactories(nri.request, 0);
-                } else {
-                    Slog.wtf(TAG, "BUG: Removing request " + nri.request.requestId + " from " +
-                            newNetwork.name() +
-                            " without updating mNetworkForRequestId or factories!");
                 }
                 // TODO: Technically, sending CALLBACK_LOST here is
                 // incorrect if there is a replacement network currently

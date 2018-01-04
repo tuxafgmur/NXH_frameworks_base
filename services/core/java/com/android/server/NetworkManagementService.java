@@ -659,7 +659,6 @@ public class NetworkManagementService extends INetworkManagementService.Stub
             mConnector.execute("strict", "enable");
             mStrictEnabled = true;
         } catch (NativeDaemonConnectorException e) {
-            Log.wtf(TAG, "Failed strict enable", e);
         }
 
         // push any existing quota or UID rules
@@ -2987,7 +2986,6 @@ public class NetworkManagementService extends INetworkManagementService.Stub
             if(intent != null
                     && intent.getAction().equals("org.codeaurora.restrictData")) {
                 isBlockAllData = intent.getBooleanExtra("Restrict",false);
-                Log.wtf("ZeroBalance", "Intent value to block unblock data"+isBlockAllData);
             }
             mContext.enforceCallingOrSelfPermission(CONNECTIVITY_INTERNAL, TAG);
 
@@ -2995,8 +2993,6 @@ public class NetworkManagementService extends INetworkManagementService.Stub
             // TODO: eventually migrate to be always enabled
             if (!mBandwidthControlEnabled) return;
             try {
-                Log.wtf("ZeroBalance", "before calling connector Intent"
-                        +"value to block unblock data"+isBlockAllData);
                 mConnector.execute("bandwidth",
                         isBlockAllData ? "blockAllData" : "unblockAllData");
             } catch (NativeDaemonConnectorException e) {

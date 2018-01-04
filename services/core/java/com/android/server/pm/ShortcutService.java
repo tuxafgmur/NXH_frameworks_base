@@ -1371,7 +1371,7 @@ public class ShortcutService extends IShortcutService.Stub {
                     }
                 } catch (IOException | RuntimeException e) {
                     // STOPSHIP Change wtf to e
-                    Slog.wtf(ShortcutService.TAG, "Unable to write bitmap to file", e);
+                    Slog.w(ShortcutService.TAG, "Unable to write bitmap to file", e);
                     if (path != null && path.exists()) {
                         path.delete();
                     }

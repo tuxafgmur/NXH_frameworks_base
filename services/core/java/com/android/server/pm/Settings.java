@@ -1753,14 +1753,10 @@ final class Settings {
             mReadMessages.append("Error reading: " + e.toString());
             PackageManagerService.reportSettingsProblem(Log.ERROR,
                     "Error reading stopped packages: " + e);
-            Slog.wtf(PackageManagerService.TAG, "Error reading package manager stopped packages",
-                    e);
 
         } catch (java.io.IOException e) {
             mReadMessages.append("Error reading: " + e.toString());
             PackageManagerService.reportSettingsProblem(Log.ERROR, "Error reading settings: " + e);
-            Slog.wtf(PackageManagerService.TAG, "Error reading package manager stopped packages",
-                    e);
         }
     }
 
@@ -1950,7 +1946,7 @@ final class Settings {
             // might have been corrupted.
             if (!backupFile.exists()) {
                 if (!userPackagesStateFile.renameTo(backupFile)) {
-                    Slog.wtf(PackageManagerService.TAG,
+                    Slog.w(PackageManagerService.TAG,
                             "Unable to backup user packages state file, "
                             + "current changes will be lost at reboot");
                     return;
@@ -2081,7 +2077,7 @@ final class Settings {
             // Done, all is good!
             return;
         } catch(java.io.IOException e) {
-            Slog.wtf(PackageManagerService.TAG,
+            Slog.w(PackageManagerService.TAG,
                     "Unable to write package manager user packages state, "
                     + " current changes will be lost at reboot", e);
         }
@@ -2277,14 +2273,10 @@ final class Settings {
             mReadMessages.append("Error reading: " + e.toString());
             PackageManagerService.reportSettingsProblem(Log.ERROR,
                     "Error reading stopped packages: " + e);
-            Slog.wtf(PackageManagerService.TAG, "Error reading package manager stopped packages",
-                    e);
 
         } catch (java.io.IOException e) {
             mReadMessages.append("Error reading: " + e.toString());
             PackageManagerService.reportSettingsProblem(Log.ERROR, "Error reading settings: " + e);
-            Slog.wtf(PackageManagerService.TAG, "Error reading package manager stopped packages",
-                    e);
 
         }
     }
@@ -2301,7 +2293,7 @@ final class Settings {
             // might have been corrupted.
             if (!mBackupSettingsFilename.exists()) {
                 if (!mSettingsFilename.renameTo(mBackupSettingsFilename)) {
-                    Slog.wtf(PackageManagerService.TAG,
+                    Slog.w(PackageManagerService.TAG,
                             "Unable to backup package manager settings, "
                             + " current changes will be lost at reboot");
                     return;
@@ -2444,20 +2436,17 @@ final class Settings {
             return;
 
         } catch(XmlPullParserException e) {
-            Slog.wtf(PackageManagerService.TAG, "Unable to write package manager settings, "
+            Slog.w(PackageManagerService.TAG, "Unable to write package manager settings, "
                     + "current changes will be lost at reboot", e);
         } catch(java.io.IOException e) {
-            Slog.wtf(PackageManagerService.TAG, "Unable to write package manager settings, "
+            Slog.w(PackageManagerService.TAG, "Unable to write package manager settings, "
                     + "current changes will be lost at reboot", e);
         }
         // Clean up partially written files
         if (mSettingsFilename.exists()) {
             if (!mSettingsFilename.delete()) {
-                Slog.wtf(PackageManagerService.TAG, "Failed to clean up mangled file: "
-                        + mSettingsFilename);
             }
         }
-        //Debug.stopMethodTracing();
     }
 
     void writeKernelMappingLPr() {
@@ -2595,7 +2584,7 @@ final class Settings {
             writer.close();
             journal.commit();
         } catch (Exception e) {
-            Slog.wtf(TAG, "Failed to write packages.list", e);
+            Slog.w(TAG, "Failed to write packages.list", e);
             IoUtils.closeQuietly(writer);
             journal.rollback();
         }
@@ -2854,7 +2843,7 @@ final class Settings {
                 mReadMessages.append("No start tag found in settings file\n");
                 PackageManagerService.reportSettingsProblem(Log.WARN,
                         "No start tag found in package manager settings");
-                Slog.wtf(PackageManagerService.TAG,
+                Slog.w(PackageManagerService.TAG,
                         "No start tag found in package manager settings");
                 return false;
             }
@@ -2971,7 +2960,7 @@ final class Settings {
             mSettingsFilename.delete();
             mReadMessages.append("Error reading: " + e.toString());
             PackageManagerService.reportSettingsProblem(Log.ERROR, "Error reading settings: " + e);
-            Slog.wtf(PackageManagerService.TAG, "Error reading package manager settings", e);
+            Slog.w(PackageManagerService.TAG, "Error reading package manager settings", e);
             throw new IllegalStateException("Failed parsing settings file: "
                     + mSettingsFilename , e);
         } finally {
@@ -5148,7 +5137,7 @@ final class Settings {
                 }
             // Any error while writing is fatal.
             } catch (Throwable t) {
-                Slog.wtf(PackageManagerService.TAG,
+                Slog.w(PackageManagerService.TAG,
                         "Failed to write settings, restoring backup", t);
                 destination.failWrite(out);
             } finally {
