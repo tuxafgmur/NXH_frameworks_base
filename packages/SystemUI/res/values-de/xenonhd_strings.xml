@@ -43,4 +43,6 @@
   <string name="accessibility_quick_settings_lock_screen_on">Sperrbildschirm an</string>
   <string name="accessibility_quick_settings_lock_screen_changed_off">Sperrbildschirm wurde ausgeschaltet</string>
   <string name="accessibility_quick_settings_lock_screen_changed_on">Sperrbildschirm wurde aktiviert</string>
+  <!-- VoLTE icon switch -->
+  <string name="status_bar_volte">VoLTE</string>
 </resources>

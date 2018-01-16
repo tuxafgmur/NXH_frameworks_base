@@ -18,6 +18,7 @@
   <string name="lucky_patcher_installed_message">我现在愿意承认自己是个小偷和海盗。我喜欢从用功的开发者偷钱，然后向别人炫耀。</string>
   <string name="lucky_patcher_admit">我承认</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">恶搞包签名</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
   <string name="permdesc_fakePackageSignature">允许此程序伪装成其他程序。 请注意，恶意程序可能会利用此特权访问隐私数据！</string>
 </resources>

@@ -15,8 +15,10 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- LuckyPatcher carnt dialog -->
   <string name="lucky_patcher_installed_title">To LuckyPatcher βρέθηκε!!!</string>
-  <string name="lucky_patcher_installed_message">Δια του παρόντος πρόθυμα οφείλω να ομολογήσω ότι είμαι ένας τρόμπας, κλέφτης και ένας πειρατής. Μου αρέσει να κλέβω χρήματα από τους σκλήρα εργαζόμενους προγραμματιστές και καυχιέμαι για αυτό.</string>
+  <string name="lucky_patcher_installed_message">Δια του παρόντος πρόθυμα ομολογώ ότι είμαι ένας τρόμπας, κλέφτης και πειρατής. Μου αρέσει να κλέβω χρήματα από τους σκληρά εργαζόμενους προγραμματιστές και να καυχιέμαι για αυτό.</string>
   <string name="lucky_patcher_admit">Το παραδέχομαι</string>
   <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permlab_fakePackageSignature">Μίμηση υπογραφής πακέτου</string>
   <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
+  <string name="permdesc_fakePackageSignature">Επιτρέπει στην εφαρμογή να προσποιείται ότι είναι μια διαφορετική εφαρμογή. Κακόβουλες εφαρμογές μπορεί να είναι σε θέση να χρησιμοποιήσουν αυτή τη λειτουργία για να έχουν πρόσβαση σε προσωπικά σας δεδομένα. Εκχωρήσετε το δικαίωμα αυτό με ιδιαίτερη προσοχή!</string>
 </resources>

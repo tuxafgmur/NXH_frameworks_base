@@ -13,14 +13,36 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">स्क्रीनशॉट डिलीट किया</string>
   <!-- Status bar items tuner -->
+  <string name="statusbar_icons_blacklist">स्टेटस बार चिह्न</string>
   <!-- Quick Settings tiles -->
+  <string name="quick_settings_screenshot_label">स्क्रीनशॉट</string>
+  <string name="quick_settings_reboot_label">रिबूट</string>
+  <string name="quick_settings_reboot_recovery_label">रिकवरी</string>
+  <string name="quick_settings_music_label">संगीत</string>
+  <string name="quick_settings_music_play">चलायें</string>
+  <string name="quick_settings_music_pause">पॉज़</string>
+  <string name="quick_settings_ime_tile_label">इनपुट विधि</string>
   <!-- Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated. [CHAR LIMIT=4] -->
   <!-- Free RAM -->
+  <string name="free_ram">मुक्त रैम:\u0020</string>
   <!-- Path data for Solid battery -->
   <!-- High Brightness Mode Tile -->
+  <string name="quick_settings_high_brightness">High brightness</string>
+  <string name="high_brightness_warning">उच्च चमक मोड सक्रिय, वर्तमान चमक सेटिंग्स अधिभावी</string>
   <!-- Pirate alert -->
+  <string name="pirate_label">आर्रर्र्</string>
+  <string name="pirate_spec">लुटेरा</string>
   <!-- QS Lockscreen Tile -->
+  <string name="quick_settings_lockscreen_label">लॉक स्क्रीन</string>
+  <string name="quick_settings_lockscreen_label_enforced">लॉक स्क्रीन प्रबलित</string>
+  <string name="accessibility_quick_settings_lock_screen_off">लॉक स्क्रीन बंद</string>
+  <string name="accessibility_quick_settings_lock_screen_on">लॉक स्क्रीन चालू</string>
+  <string name="accessibility_quick_settings_lock_screen_changed_off">लॉक स्क्रीन बंद कर दिया</string>
+  <string name="accessibility_quick_settings_lock_screen_changed_on">लॉक स्क्रीन चालु कर दिया</string>
+  <!-- VoLTE icon switch -->
+  <string name="status_bar_volte">VoLTE</string>
 </resources>

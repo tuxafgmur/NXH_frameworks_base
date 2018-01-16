@@ -43,4 +43,5 @@
   <string name="accessibility_quick_settings_lock_screen_on">تفعيل قفل الشاشة</string>
   <string name="accessibility_quick_settings_lock_screen_changed_off">قفل الشاشة غير مفعل.</string>
   <string name="accessibility_quick_settings_lock_screen_changed_on">قفل الشاشة مفعل.</string>
+  <!-- VoLTE icon switch -->
 </resources>

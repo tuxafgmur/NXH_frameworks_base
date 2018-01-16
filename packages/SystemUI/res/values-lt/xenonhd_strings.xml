@@ -37,4 +37,5 @@
   <string name="pirate_spec">piratas</string>
   <!-- QS Lockscreen Tile -->
   <string name="quick_settings_lockscreen_label">Užrakinti ekraną</string>
+  <!-- VoLTE icon switch -->
 </resources>

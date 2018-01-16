@@ -43,4 +43,6 @@
   <string name="accessibility_quick_settings_lock_screen_on">Pantalla de bloqueo activada.</string>
   <string name="accessibility_quick_settings_lock_screen_changed_off">Desactivando pantalla de bloqueo</string>
   <string name="accessibility_quick_settings_lock_screen_changed_on">Activando pantalla de bloqueo</string>
+  <!-- VoLTE icon switch -->
+  <string name="status_bar_volte">Español</string>
 </resources>

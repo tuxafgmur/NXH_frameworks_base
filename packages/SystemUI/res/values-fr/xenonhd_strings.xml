@@ -43,4 +43,5 @@
   <string name="accessibility_quick_settings_lock_screen_on">Écran de verrouillage activé</string>
   <string name="accessibility_quick_settings_lock_screen_changed_off">Ecran de verrouillage éteint</string>
   <string name="accessibility_quick_settings_lock_screen_changed_on">Ecran de verrouillage allumé</string>
+  <!-- VoLTE icon switch -->
 </resources>

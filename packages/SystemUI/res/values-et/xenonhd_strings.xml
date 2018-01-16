@@ -19,7 +19,7 @@
   <!-- Quick Settings tiles -->
   <string name="quick_settings_screenshot_label">Kuvatõmmis</string>
   <string name="quick_settings_reboot_label">Taaskäivita</string>
-  <string name="quick_settings_reboot_recovery_label">Recovery režiim</string>
+  <string name="quick_settings_reboot_recovery_label">Taastamine</string>
   <string name="quick_settings_music_label">Muusika</string>
   <string name="quick_settings_music_play">Esita</string>
   <string name="quick_settings_music_pause">Paus</string>
@@ -28,7 +28,7 @@
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated. [CHAR LIMIT=4] -->
   <!-- Free RAM -->
-  <string name="free_ram">Vaba RAM:\u0020</string>
+  <string name="free_ram">Vaba mälu:\u0020</string>
   <!-- Path data for Solid battery -->
   <!-- High Brightness Mode Tile -->
   <string name="quick_settings_high_brightness">Kõrge heledus</string>
@@ -37,4 +37,12 @@
   <string name="pirate_label">Aaarrrggghhh</string>
   <string name="pirate_spec">piraat</string>
   <!-- QS Lockscreen Tile -->
+  <string name="quick_settings_lockscreen_label">Lukustuskuva</string>
+  <string name="quick_settings_lockscreen_label_enforced">Lukustuskuva sunnitud</string>
+  <string name="accessibility_quick_settings_lock_screen_off">Lukustuskuva välja</string>
+  <string name="accessibility_quick_settings_lock_screen_on">Lukustuskuva sisse</string>
+  <string name="accessibility_quick_settings_lock_screen_changed_off">Lukustuskuva välja lülitatud</string>
+  <string name="accessibility_quick_settings_lock_screen_changed_on">Lukustuskuva on sisse lülitatud</string>
+  <!-- VoLTE icon switch -->
+  <string name="status_bar_volte">VoLTE</string>
 </resources>

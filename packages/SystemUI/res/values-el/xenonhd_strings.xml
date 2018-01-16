@@ -13,7 +13,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Screenshot Delete Toast -->
+  <string name="delete_screenshot_toast">Το στιγμιότυπο οθόνης διαγράφηκε</string>
   <!-- Status bar items tuner -->
+  <string name="statusbar_icons_blacklist">Εικονίδια γραμμής κατάστασης</string>
   <!-- Quick Settings tiles -->
   <string name="quick_settings_screenshot_label">Στιγμιότυπο οθόνης</string>
   <string name="quick_settings_reboot_label">Επανεκκίνηση</string>
@@ -30,12 +32,17 @@
   <!-- Path data for Solid battery -->
   <!-- High Brightness Mode Tile -->
   <string name="quick_settings_high_brightness">Υψηλή φωτεινότητα</string>
+  <string name="high_brightness_warning">Ενεργοποιήθηκε η λειτουργία υψηλής φωτεινότητας, παρακάμπτοντας τις τρέχουσες ρυθμίσεις φωτεινότητας</string>
   <!-- Pirate alert -->
+  <string name="pirate_label">Αααργκκκ</string>
   <string name="pirate_spec">πειρατής</string>
   <!-- QS Lockscreen Tile -->
   <string name="quick_settings_lockscreen_label">Οθόνη κλειδώματος</string>
+  <string name="quick_settings_lockscreen_label_enforced">Επιβολή κλειδώματος οθόνης</string>
   <string name="accessibility_quick_settings_lock_screen_off">Απενεργοποίηση οθόνης κλειδώματος</string>
   <string name="accessibility_quick_settings_lock_screen_on">Ενεργοποίηση οθόνης κλειδώματος</string>
-  <string name="accessibility_quick_settings_lock_screen_changed_off">Απενεργοποιημένη οθόνη κλειδώματος</string>
+  <string name="accessibility_quick_settings_lock_screen_changed_off">Το κλείδωμα οθόνης απενεργοποιήθηκε</string>
   <string name="accessibility_quick_settings_lock_screen_changed_on">Ενεργοποιημένη οθόνη κλειδώματος</string>
+  <!-- VoLTE icon switch -->
+  <string name="status_bar_volte">Φωνητική Κλήση μέσω δεδομένων ( VoLTE)</string>
 </resources>

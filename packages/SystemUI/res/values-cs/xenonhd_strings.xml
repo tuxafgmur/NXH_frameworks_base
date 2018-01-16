@@ -43,4 +43,6 @@
   <string name="accessibility_quick_settings_lock_screen_on">Zamčení obrazovky zapnuto</string>
   <string name="accessibility_quick_settings_lock_screen_changed_off">Zamknout obrazovku vypnuto</string>
   <string name="accessibility_quick_settings_lock_screen_changed_on">Zamknout obrazovku zapnuto</string>
+  <!-- VoLTE icon switch -->
+  <string name="status_bar_volte">VoLTE</string>
 </resources>

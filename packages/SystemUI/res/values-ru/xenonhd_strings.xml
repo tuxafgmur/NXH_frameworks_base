@@ -43,4 +43,6 @@
   <string name="accessibility_quick_settings_lock_screen_on">Экран блокировки вкл.</string>
   <string name="accessibility_quick_settings_lock_screen_changed_off">Экран блокировки выключен</string>
   <string name="accessibility_quick_settings_lock_screen_changed_on">Экран блокировки включен</string>
+  <!-- VoLTE icon switch -->
+  <string name="status_bar_volte">VoLTE</string>
 </resources>

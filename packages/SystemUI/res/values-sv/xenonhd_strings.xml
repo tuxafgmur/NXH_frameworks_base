@@ -42,4 +42,5 @@
   <string name="accessibility_quick_settings_lock_screen_on">Låsskärm på</string>
   <string name="accessibility_quick_settings_lock_screen_changed_off">Låsskärm avstängd</string>
   <string name="accessibility_quick_settings_lock_screen_changed_on">Låsskärm påslagen</string>
+  <!-- VoLTE icon switch -->
 </resources>

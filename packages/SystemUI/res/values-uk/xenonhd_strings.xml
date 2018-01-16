@@ -43,4 +43,5 @@
   <string name="accessibility_quick_settings_lock_screen_on">Блокування екрану ввімкнено</string>
   <string name="accessibility_quick_settings_lock_screen_changed_off">Блокування екрана вимкнено</string>
   <string name="accessibility_quick_settings_lock_screen_changed_on">Блокування екрана ввімкнено</string>
+  <!-- VoLTE icon switch -->
 </resources>

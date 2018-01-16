@@ -43,4 +43,6 @@
   <string name="accessibility_quick_settings_lock_screen_on">鎖定畫面開啟</string>
   <string name="accessibility_quick_settings_lock_screen_changed_off">鎖定畫面已關閉</string>
   <string name="accessibility_quick_settings_lock_screen_changed_on">鎖定畫面已開啟</string>
+  <!-- VoLTE icon switch -->
+  <string name="status_bar_volte">VoLTE</string>
 </resources>
